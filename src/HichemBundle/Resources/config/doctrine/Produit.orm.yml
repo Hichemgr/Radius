@@ -1,0 +1,41 @@
+HichemBundle\Entity\Produit:
+    type: entity
+    table: produit
+    id:
+        idproduit:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            id: true
+            generator:
+                strategy: IDENTITY
+    fields:
+        nomproduit:
+            type: string
+            nullable: false
+            length: 100
+            options:
+                fixed: false
+        prix:
+            type: float
+            nullable: false
+            precision: 10
+            scale: 0
+        quantite:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+        note:
+            type: float
+            nullable: false
+            precision: 10
+            scale: 0
+        description:
+            type: string
+            nullable: false
+            length: 1000
+            options:
+                fixed: false
+    lifecycleCallbacks: {  }

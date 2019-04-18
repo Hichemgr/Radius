@@ -1,0 +1,69 @@
+hichem_homepage:
+    path:     /index
+    defaults: { _controller: HichemBundle:Default:index }
+
+front:
+    path:     /indexfront
+    defaults: { _controller: HichemBundle:Default:indexfront }
+
+shopdetails:
+    path:     /shopdetails{idproduit}
+    defaults: { _controller: HichemBundle:Default:shopdetails }
+cart:
+    path:     /cart
+    defaults: { _controller: HichemBundle:Default:cart }
+listproduit:
+    path:     /listproduit
+    defaults: { _controller: HichemBundle:Default:listproduit }
+
+checkout:
+    path:     /checkout
+    defaults: { _controller: HichemBundle:Default:checkout }
+
+ajoutPanier:
+    path:     /ajoutPanier
+    defaults: { _controller: HichemBundle:Default:ajoutPanier }
+
+afficherPanier:
+    path:     /afficherPanier
+    defaults: { _controller: HichemBundle:Default:afficherPanier }
+
+supprimerPanier:
+    path:     /supprimerPanier{id}
+    defaults: { _controller: HichemBundle:Default:supprimerPanier }
+
+modifierPanier:
+    path:     /modifierPanier{id}
+    defaults: { _controller: HichemBundle:Default:modifierPanier }
+
+supprimerLigneproduit:
+    path:     /supprimerLigneproduit{id}
+    defaults: { _controller: HichemBundle:Default:supprimerLigneproduit }
+
+delete:
+    path:     /delete/{id},{panId}
+    defaults: { _controller: HichemBundle:panier:delete }
+
+updateup:
+    path:     /updateup/{id},{panId}
+    defaults: { _controller: HichemBundle:panier:updateup }
+
+updatemoins:
+    path:     /updatemoins/{id},{panId}
+    defaults: { _controller: HichemBundle:panier:updatemoins }
+
+add:
+    path:     /add/{id}/{quantite}
+    defaults: { _controller: HichemBundle:panier:add }
+
+stat:
+    path:     /stat
+    defaults: { _controller: HichemBundle:Default:stat }
+
+pdf:
+    path:     /pdf
+    defaults: { _controller: HichemBundle:panier:pdf }
+
+valide:
+    path:     /valide
+    defaults: { _controller: HichemBundle:panier:valide }

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="SlimBundle\Entity\Ligneproduit" table="ligneproduit">
+    <indexes>
+      <index name="idpanier" columns="idpanier"/>
+      <index name="fk_produit" columns="idproduit"/>
+    </indexes>
+    <id name="idligne" type="integer" column="idligne">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="quantite" type="integer" column="quantite" nullable="false">
+      <options>
+        <option name="unsigned"/>
+      </options>
+    </field>
+    <many-to-one field="idproduit" target-entity="Produit" fetch="LAZY">
+      <join-columns>
+        <join-column name="idproduit" referenced-column-name="idproduit"/>
+      </join-columns>
+    </many-to-one>
+    <many-to-one field="idpanier" target-entity="Panier" fetch="LAZY">
+      <join-columns>
+        <join-column name="idpanier" referenced-column-name="idpanier"/>
+      </join-columns>
+    </many-to-one>
+  </entity>
+</doctrine-mapping>

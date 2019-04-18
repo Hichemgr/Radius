@@ -1,0 +1,59 @@
+{% extends 'basefront.html.twig' %}
+
+{% block vote %}
+
+    <!-- ##### Contact Area Start ##### -->
+    <head>
+        <link rel="stylesheet" type="text/css" href="{{ asset('bundles/starrating/css/rating.css') }}" />
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+        <script src="{{ asset('bundles/starrating/js/rating.js') }}"></script>
+        <title></title>
+    </head>
+    <section class="contact-area">
+                    <!-- Section Heading -->
+                    <h1>  </h1>
+                    <div class="section-heading">
+                        <h2>Ajouter votre Vote</h2>
+
+                    </div>
+                    <!-- Contact Form Area -->
+                    <div class="contact-form-area mb-100">
+                        <form action="#" method="post">
+                            <div class="row">
+
+
+                                <div class="col-12">
+                                    <div class="form-group">
+
+                                        {% form_theme Vote_form 'bootstrap_4_horizontal_layout.html.twig' %}
+                                        {{ form_start(Vote_form) }}
+
+
+                                        {{ form_end(Vote_form) }}
+                                        {{ form_widget(Vote_form.note) }}
+
+
+                                        {% for flashMessage in app.session.flashbag.get('notice') %}
+
+                                            <div class="alert alert-danger">
+                                                {{ flashMessage }}
+                                            </div>
+
+
+                                        {% endfor %}
+
+                                    </div>
+                                </div>
+
+
+                            </div>
+                        </form>
+                    </div>
+
+    </section>
+
+
+{% endblock %}
+
+
+

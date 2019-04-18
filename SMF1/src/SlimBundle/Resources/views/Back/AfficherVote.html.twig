@@ -1,0 +1,98 @@
+{% extends 'base.html.twig' %}
+{% block content %}
+
+
+    <section class="content">
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="box">
+                    <div class="box-header"><center>
+                            <h3 class="box-title">Liste des Vote</h3></center>
+                    </div><!-- /.box-header -->
+                    <aside class="s_widget search_widget">
+                        <div class="input-group">
+                            <form type="POST">
+                                <input type="text" name="title" id="title" class="form-control border-top-0 border-left-0 border-right-0 rounded-0 pl-4" placeholder="What are you looking for?">
+                            </form>                                            <span class="input-group-btn">
+                                        <button class="btn btn-default" type="button"><i class="fa fa-search" aria-hidden="true"></i></button>
+                                    </span></div></aside><br>
+                       <div class="box-body table-responsive"><div id="test">
+                           <table id="example2" class="table table-bordered table-hover">
+                            <thead>
+                            <tr>
+                                <td>Nom Produit</td>
+                                <td>note</td>
+                                <td>commentaire</td>
+
+                                <td>Supprimer</td>
+                            </tr>
+
+
+                            </thead>
+
+                               <tbody>
+                                      {%  for entity in Vote %}
+                                   <tr>
+                                    <td>{{ entity.nomproduit }}</td>
+                                    <td>{{ entity.note }}</td>
+                                    <td>{{ entity.commentaire }}</td>
+
+                                    <td><a href="{{ path('SupprimerVote',{'idvote': entity.idvote}) }}" class="btn btn-danger">Supprimer</a></td>
+
+                                    </tr>
+
+
+                                    {% else %}
+                                     <h1>Table is empty</h1>
+                                        {%  endfor %}
+
+
+                                    </tbody>
+                        </table>
+
+                    </div>  </div>
+
+                    <div class="box-body table-responsive">
+                        <table id="example2" class="table table-bordered table-hover">
+                            <thead>
+                    <tr>
+                        <td>  moyenne  total des votes</td>
+                        <td>  moyenne zahra  </td>
+                        <td>  moyenne plante vertes  </td>
+                        <td>  moyenne hibiscus </td>
+                        <td>  moyenne marguerite </td>
+
+                    </tr>
+                            </thead>
+                            <tbody>
+                    <tr>
+                        <td >{{ moyenne }}</td>
+                        <td>{{ moyennez }}</td>
+                        <td>{{ moyennepv }}</td>
+                        <td>{{ moyenneh }}</td>
+                        <td>{{ moyennem }}</td>
+                    </tr>
+                            </tbody>
+                    </table>
+                    </div>
+
+
+
+                </div>
+            </div>
+        </div>
+        <div class="navigation">
+            {{ knp_pagination_render(V) }}
+        </div>
+        <div class="row no-print">
+            <div class="col-xs-12">
+                <button class="btn btn-default" onclick="window.print();"><i class="fa fa-print"></i> Print</button>
+
+            </div>
+        </div>
+    </section>
+    <script src="{{ asset('script/jquery-3.3.1.min.js') }}"></script>
+    <script src="{{ asset('script/M.js') }}"></script>
+
+{% endblock %}
+

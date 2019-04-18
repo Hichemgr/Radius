@@ -1,0 +1,54 @@
+{% extends 'base.html.twig' %}
+{% block content %}
+
+
+    <section class="content">
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="box">
+                    <div class="box-header"><center>
+                            <h3 class="box-title">Liste des User</h3></center>
+                    </div><!-- /.box-header -->
+                    <div class="box-body table-responsive">
+                        <table id="example2" class="table table-bordered table-hover">
+                            <thead>
+                            <tr>
+                                <td>Email </td>
+
+                            </tr>
+                            </thead>
+
+                            <tbody>
+                            {%  for entity in User %}
+                                <tr>
+                                    <td>{{ entity.email }}</td>
+
+
+
+
+                                </tr>
+                            {% else %}
+                                <h1>Table is empty</h1>
+                            {%  endfor %}
+                            </tbody>
+                        </table>
+
+
+
+
+
+
+
+
+
+                            </tbody>
+                            </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+
+{% endblock %}

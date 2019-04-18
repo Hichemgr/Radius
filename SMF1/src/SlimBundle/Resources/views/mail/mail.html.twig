@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+
+{% block content %}
+    <center>
+        <h1>Envoyer Mail </h1>
+    </center>
+    {% form_theme form 'bootstrap_4_horizontal_layout.html.twig' %}
+    {{ form(form) }}
+
+
+
+    {{ form(form) }}
+    <td><a href="{{ path('afficherPromotion') }}" class="btn btn-danger">Retour</a></td>
+{% endblock %}
+
+

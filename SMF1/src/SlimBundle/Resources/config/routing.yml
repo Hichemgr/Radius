@@ -1,0 +1,74 @@
+slim_homepage:
+    path:     /index
+    defaults: { _controller: SlimBundle:Default:index }
+slim_homepagefront:
+    path:     /indexfront
+    defaults: { _controller: SlimBundle:Default:indexfront }
+slim_homepagefrontassisstance:
+    path:     /single-post
+    defaults: { _controller: SlimBundle:Default:singlepost }
+slim_homepagefrontpromotion:
+    path:     /Front/portfolio
+    defaults: { _controller: SlimBundle:Default:portfolio }
+ajoutAssisstance:
+    path:     /ajoutAssisstance
+    defaults: { _controller: SlimBundle:Default:ajoutAssisstance }
+
+ajouterAssisstant:
+    path:     /ajouterAssisstant
+    defaults: { _controller: SlimBundle:Default:ajouterAssisstant }
+ajouterPromotion:
+    path:     /ajouterPromotion
+    defaults: { _controller: SlimBundle:Default:ajouterPromotion }
+afficherPromotion:
+    path:     /afficherPromotion
+    defaults: { _controller: SlimBundle:Default:afficherPromotion }
+supprimerPromotion:
+    path:     /supprimerPromotion{idpromotion}
+    defaults: { _controller: SlimBundle:Default:supprimerPromotion }
+modifierPromotion:
+    path:     /modifierPromotion{idpromotion}
+    defaults: { _controller: SlimBundle:Default:modifierPromotion }
+rechercherPromotion:
+    path:     /rechercherPromotion
+    defaults: { _controller: SlimBundle:Default:rechercherPromotion }
+afficherAssisstant:
+        path:     /afficherAssisstant
+        defaults: { _controller: SlimBundle:Default:afficherAssisstant }
+
+supprimerAssisstant:
+    path:     /supprimerAssisstant{IdAssisstant}
+    defaults: { _controller: SlimBundle:Default:supprimerAssisstant }
+supprimerAssisstance:
+    path:     /supprimerAssisstance{idAssisstance}
+    defaults: { _controller: SlimBundle:Default:supprimerAssisstance }
+supprimerConseil:
+    path:     /supprimerConseil{idConseil}
+    defaults: { _controller: SlimBundle:Default:supprimerConseil }
+modifierAssisstant:
+        path:     /modifierAssisstant{IdAssisstant}
+        defaults: { _controller: SlimBundle:Default:modifierAssisstant }
+modifierAssisstance:
+    path:     /modifierAssisstance{idAssisstance}
+    defaults: { _controller: SlimBundle:Default:modifierAssisstance }
+ajouterPub:
+    path:     /ajouterPub
+    defaults: { _controller: SlimBundle:Default:ajouterPub }
+afficherPub:
+    path:     /afficherPub
+    defaults: { _controller: SlimBundle:Default:afficherPub }
+supprimerPub:
+    path:     /supprimerPub{idpublicite}
+    defaults: { _controller: SlimBundle:Default:supprimerPub }
+modifierPub:
+    path:     /modifierPub{idpublicite}
+    defaults: { _controller: SlimBundle:Default:modifierPub }
+afficherPromotionr:
+    path:     /afficherPromotionr/{nom}
+    defaults: { _controller: SlimBundle:Default:afficherPromotionR }
+mail:
+        path:     /sendmail
+        defaults: { _controller: SlimBundle:Mail:sendMail }
+afficherUsern:
+        path:     /afficherUser
+        defaults: { _controller: SlimBundle:Default:afficherUser }

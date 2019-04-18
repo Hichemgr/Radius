@@ -1,0 +1,69 @@
+{% extends 'base.html.twig' %}
+{% block content %}
+
+
+    <section class="content">
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="box">
+                    <div class="box-header"><center>
+                            <h3 class="box-title">Liste des Publicites</h3></center>
+                    </div><!-- /.box-header -->
+                    <div class="box-body table-responsive">
+                        <table id="example2" class="table table-bordered table-hover">
+                            <thead>
+                            <tr>
+                                <td>Nom </td>
+                                <td>date </td>
+
+                                <td>nom produit</td>
+
+                                <td>Supprimer</td>
+                                <td>Modifier</td>
+                            </tr>
+                            </thead>
+
+                            <tbody>
+                            {%  for entity in Pub %}
+                                <tr>
+                                    <td>{{ entity.nompublicite }}</td>
+                                    <td>{{ entity.datepub| date  }}</td>
+
+                                    <td>{{ entity.nomproduit }}</td>
+
+                                    <td><a href="{{ path('supprimerPub',{'idpublicite': entity.idpublicite}) }}" class="btn btn-danger">Supprimer</a></td>
+                                    <td><a href="{{ path('modifierPub',{'idpublicite': entity.idpublicite}) }}" class="btn btn-success">Modifier</a></td>
+
+                                </tr>
+                            {% else %}
+                                <h1>Table is empty</h1>
+                            {%  endfor %}
+                            </tbody>
+                        </table>
+                        <center>
+                            <a href="{{ path('ajouterPub') }}" class="btn btn-green">Ajouter Des Publicites</a>
+                            <td><a href="{{ path('mail') }}" class="btn btn-danger">Envoyer mail</a></td>
+
+
+
+
+
+
+
+
+                            </tbody>
+                            </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row no-print">
+            <div class="col-xs-12">
+                <button class="btn btn-default" onclick="window.print();"><i class="fa fa-print"></i> Print</button>
+
+            </div>
+        </div>
+    </section>
+
+
+{% endblock %}

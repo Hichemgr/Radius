@@ -1,0 +1,22 @@
+{% extends 'base.html.twig' %}
+
+{% block content %}
+    <center>
+        <h1>Ajouter Promotion</h1>
+    </center>
+    {% form_theme Promotion_form 'bootstrap_4_horizontal_layout.html.twig' %}
+    {{ form_start(Promotion_form) }}
+
+    <input type="hidden" {{ form_widget(Promotion_form.nouveauprix) }}
+    {{ form_end(Promotion_form) }}
+    {% for flashMessage in app.session.flashbag.get('notice') %}
+
+
+        <div class="alert alert-danger">
+            {{ flashMessage }}
+        </div>
+
+    {% endfor %}
+
+
+{% endblock %}

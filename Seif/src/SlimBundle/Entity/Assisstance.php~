@@ -1,0 +1,54 @@
+<?php
+
+namespace Slim\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Assisstance
+ *
+ * @ORM\Table(name="assisstance")
+ * @ORM\Entity
+ */
+class Assisstance
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id_assisstance", type="integer", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $idAssisstance;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="id_client", type="string", length=20, nullable=false)
+     */
+    private $idClient;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="id_assisstant", type="string", length=20, nullable=false)
+     */
+    private $idAssisstant;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="dateAss", type="date", nullable=false)
+     */
+    private $dateass;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="type", type="string", length=10, nullable=false)
+     */
+    private $type;
+
+
+}
+

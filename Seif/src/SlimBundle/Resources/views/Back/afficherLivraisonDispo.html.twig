@@ -1,0 +1,64 @@
+{% extends 'base.html.twig' %}
+{% block content %}
+
+
+    <section class="content">
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="box">
+                    <div class="box-header"><center>
+
+                    </div><!-- /.box-header -->
+                    <div class="box-body table-responsive">
+
+                        <h3 class="box-title" align = center>Liste des livreurs</h3>
+                        <table id="example3" class="table table-bordered table-hover">
+                            <thead>
+                            <tr>
+                                <td>Nom Livreur</td>
+                                <td>Prenom Livreur</td>
+                                <td>Cin</td>
+                                <td>Etat</td>
+                                <td>Affecter</td>
+
+                            </tr>
+                            </thead>
+
+                            <tbody>
+                            {%  for entity in Livreur %}
+                                <tr>
+                                    <td>{{ entity.nom }}</td>
+                                    <td>{{ entity.prenom }}</td>
+                                    <td>{{ entity.cin }}</td>
+                                    <td>{{ entity.etat }}</td>
+                                    <td>
+                                        <a href="{{ path('AffecterLivreurLivraison', {'idLivraison':idLivraison,'nomLivreur':entity.nom}) }}" class="btn default btn-xs purple">
+                                            <i class="fa fa-edit"></i> Affecter
+                                        </a>
+                                    </td>
+                                </tr>
+                            {% else %}
+                                <h1>Table is empty</h1>
+                            {%  endfor %}
+                            </tbody>
+                        </table>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row no-print">
+            <div class="col-xs-12">
+                <button class="btn btn-default" onclick="window.print();"><i class="fa fa-print"></i> Print</button>
+
+            </div>
+        </div>
+
+
+
+
+    </section>
+
+
+{% endblock %}
+

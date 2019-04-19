@@ -1,0 +1,435 @@
+{% extends 'basefront.html.twig' %}
+
+{% block title %}
+    <title>Radius</title>
+{% endblock %}
+
+{% block body %}
+
+<body>
+    <!-- Preloader -->
+    <div class="preloader d-flex align-items-center justify-content-center">
+        <div class="preloader-circle"></div>
+        <div class="preloader-img">
+            <img src="{{asset ('front/img/core-img/leaf.png')}}" alt="">
+        </div>
+    </div>
+
+    <!-- ##### Header Area Start ##### -->
+    <header class="header-area">
+
+        <!-- ***** Top Header Area ***** -->
+        <div class="top-header-area">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="top-header-content d-flex align-items-center justify-content-between">
+                            <!-- Top Header Content -->
+                            <div class="top-header-meta">
+                                <a href="#" data-toggle="tooltip" data-placement="bottom" title="infodeercreative@gmail.com"><i class="fa fa-envelope-o" aria-hidden="true"></i> <span>Email: infodeercreative@gmail.com</span></a>
+                                <a href="#" data-toggle="tooltip" data-placement="bottom" title="+1 234 122 122"><i class="fa fa-phone" aria-hidden="true"></i> <span>Call Us: +1 234 122 122</span></a>
+                            </div>
+
+                            <!-- Top Header Content -->
+                            <div class="top-header-meta d-flex">
+                                <!-- Language Dropdown -->
+                                <div class="language-dropdown">
+                                    <div class="dropdown">
+                                        <button class="btn btn-secondary dropdown-toggle mr-30" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Language</button>
+                                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                            <a class="dropdown-item" href="#">USA</a>
+                                            <a class="dropdown-item" href="#">UK</a>
+                                            <a class="dropdown-item" href="#">Bangla</a>
+                                            <a class="dropdown-item" href="#">Hindi</a>
+                                            <a class="dropdown-item" href="#">Spanish</a>
+                                            <a class="dropdown-item" href="#">Latin</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Login -->
+                                <div class="login">
+                                    <a href="#"><i class="fa fa-user" aria-hidden="true"></i> <span>Login</span></a>
+                                </div>
+                                <!-- Cart -->
+                                <div class="cart">
+                                    {%  set count=0 %}
+                                    {%  for prod in produits %}
+                                    {%  set count=count +1 %}
+                                    {% endfor %}
+                                    <a href="#"><i class="fa fa-shopping-cart" aria-hidden="true"></i> <span><span class="cart-quantity">{{ count}}</span></span></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ***** Navbar Area ***** -->
+        <div class="alazea-main-menu">
+            <div class="classy-nav-container breakpoint-off">
+                <div class="container">
+                    <!-- Menu -->
+                    <nav class="classy-navbar justify-content-between" id="alazeaNav">
+
+                        <!-- Nav Brand -->
+                        <a href="index.html" class="nav-brand"><img src="{{asset ('front/img/pepiniere/radius.png') }}" width="150" alt=""></a>
+
+                        <!-- Navbar Toggler -->
+                        <div class="classy-navbar-toggler">
+                            <span class="navbarToggler"><span></span><span></span><span></span></span>
+                        </div>
+
+                        <!-- Menu -->
+                        <div class="classy-menu">
+
+                            <!-- Close Button -->
+                            <div class="classycloseIcon">
+                                <div class="cross-wrap"><span class="top"></span><span class="bottom"></span></div>
+                            </div>
+
+                            <!-- Navbar Start -->
+                            <div class="classynav">
+                                <ul>
+                                    <li><a href="index.html">Acceuil</a></li>
+                                    <li><a href="about.html">About</a></li>
+                                    <li><a href="#">Services</a>
+                                        <ul class="dropdown">
+                                            <li><a href="single-post">Assistance</a></li>
+                                            <li><a href="about.html">Reclamation</a></li>
+                                            <li><a href="shop.html">Livraison</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="shop.html">Catalogue</a></li>
+                                    <li><a href="portfolio.html">Portfolio</a></li>
+                                    <li><a href="contact.html">Contact</a></li>
+                                </ul>
+
+                                <!-- Search Icon -->
+                                <div id="searchIcon">
+                                    <i class="fa fa-search" aria-hidden="true"></i>
+                                </div>
+
+                            </div>
+                            <!-- Navbar End -->
+                        </div>
+                    </nav>
+
+                    <!-- Search Form -->
+                    <div class="search-form">
+                        <form action="#" method="get">
+                            <input type="search" name="search" id="search" placeholder="Type keywords &amp; press enter...">
+                            <button type="submit" class="d-none"></button>
+                        </form>
+                        <!-- Close Icon -->
+                        <div class="closeIcon"><i class="fa fa-times" aria-hidden="true"></i></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- ##### Header Area End ##### -->
+
+    <!-- ##### Breadcrumb Area Start ##### -->
+    <div class="breadcrumb-area">
+        <!-- Top Breadcrumb Area -->
+        <div class="top-breadcrumb-area bg-img bg-overlay d-flex align-items-center justify-content-center" style="background-image: url({{asset ('front/img/bg-img/24.jpg')}});">
+            <h2>Cart</h2>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="#"><i class="fa fa-home"></i> Home</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">Cart</li>
+                        </ol>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ##### Breadcrumb Area End ##### -->
+
+    <!-- ##### Cart Area Start ##### -->
+    <div class="cart-area section-padding-0-100 clearfix">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="cart-table clearfix">
+                        <table class="table table-responsive">
+                            <thead>
+                                <tr>
+                                    <th>Products</th>
+                                    <th>Quantity</th>
+                                    <th>Price</th>
+                                    <th>TOTAL</th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+
+
+                            {%  for prod in produits %}
+                                <tr>
+                                    <td class="cart_product_img">
+                                        <a href="#"><img src="{{ asset('front/img/pepiniere/'~prod.nomproduit~'.png') }}" alt="Product"></a>
+                                        <h5> {{ prod.nomproduit}} </h5>
+
+                                    </td>
+                                    <td class="qty">
+                                        <div class="quantity">
+                                            <span class="qty-minus" onclick="var effect = document.getElementById('qty'); var qty = effect.value; if( !isNaN( qty ) &amp;&amp; qty &gt; 1 ) effect.value--;return false;"><!--<i class="fa fa-minus" aria-hidden="true"></i>--></span>
+                                            <a method="post">
+                                            <!--<input type="number" class="qty-text" id="qty" step="1" min="1" max="99" name="quantity" value="prodquantie">-->
+                                            <input type="text"  name="valeur" value="{{ prod.quantite }}"  size="1" id="valeur">
+
+                                                <a  href="{{ path("updateup",{id:prod.idproduit , panId:panId })  }}"> <img src="{{ asset('front/img/pepiniere/plus.png') }}" width="20"></a>
+                                                <a  href="{{ path("updatemoins",{id:prod.idproduit , panId:panId })  }}"> <img src="{{ asset('front/img/pepiniere/minus.png') }}" width="30"></a>
+
+                                            </form>
+                                            <span class="qty-plus" onclick="var effect = document.getElementById('qty'); var qty = effect.value; if( !isNaN( qty )) effect.value++;return false;"><!--<i class="fa fa-plus" aria-hidden="true"></i>--></span>
+                                        </div>
+                                    </td>
+                                    <td class="price"><span>{{ prod.prix }}</span></td>
+                                    <td class="total_price"><span>{{ prod.prix * prod.quantite }}</span></td>
+                                    <td class="action"><a href="{{ path("delete",{id:prod.idproduit , panId:panId })  }}"><i class="icon_close"></i></a></td>
+                                </tr>
+                            {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <a  href="{{ path('stat') }}"><img src="{{asset ('front/img/pepiniere/pie.png') }}" width="50" ></a>
+
+
+
+
+            <!-- //Checkout-Ends-Here -->
+            {% for pro in prixProd %}
+                {% set total = total+pro.quantite * pro.prix %}
+            {% endfor %}
+
+        </div>
+        <script src="{{ asset('https://printjs-4de6.kxcdn.com/print.min.js')}}" type="text/javascript"></script>
+
+        <button type="button" onclick="printJS({printable: someJSONdata, properties: ['Produit', 'Quantite', 'prix'], type: 'json' ,gridHeaderStyle: 'color: red;  border: 2px solid #3971A5;',
+	    gridStyle: 'border: 2px solid #3971A5;'})">
+            Print PDF
+        </button>
+        <script>
+
+            someJSONdata = [
+                {%  for prod in produits %}
+                {
+                    Produit:"{{ prod.nomproduit }}",
+                    Quantite: {{ prod.quantite }},
+                    prix: {{ prod.prix }}
+                },
+                {% endfor %}
+
+                {
+
+                    Produit: "",
+                    Quantite: "",
+                    prix: "total: {{ total }}dt"
+
+                }
+                /*  {
+                      name: 'Cool Dude',
+                      email: 'cool@dude.com',
+                      phone: '333-333-3333'
+                  }*/
+
+            ]
+
+        </script>
+            <div class="row">
+
+
+
+                <!-- Cart Totals -->
+                <div class="col-12 col-lg-6">
+                    <div class="cart-totals-area mt-70">
+                        <h5 class="title--">Cart Total</h5>
+
+                        <div class="subtotal d-flex justify-content-between">
+                            <h5>Subtotal</h5>
+
+                           <h5>{{ total }} dt </h5>
+                            </br>
+                            <h6>Frais de livraison</h6>
+                            <h6>6 dt</h6>
+
+
+                        </div>
+
+                        <div class="total d-flex justify-content-between">
+                            <h5>Total de la commande</h5>
+                            <h5>{{ total+6 }} dt</h5>
+                        </div>
+                        <div class="checkout-btn">
+                            <a href="checkout" class="btn alazea-btn w-100">PROCEED TO CHECKOUT</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <!-- ##### Cart Area End ##### -->
+
+    <!-- ##### Footer Area Start ##### -->
+    <footer class="footer-area bg-img" style="background-image: url({{asset ('front/img/bg-img/24.jpg')}});">
+        <!-- Main Footer Area -->
+        <div class="main-footer-area">
+            <div class="container">
+                <div class="row">
+
+                    <!-- Single Footer Widget -->
+                    <div class="col-12 col-sm-6 col-lg-3">
+                        <div class="single-footer-widget">
+                            <div class="footer-logo mb-30">
+                                <a href="#"><img src="{{asset ('front/img/pepiniere/radius.png') }}" width="150" alt=""></a>
+                            </div>
+                            <p>Lorem ipsum dolor sit samet, consectetur adipiscing elit. India situs atione mantor</p>
+                            <div class="social-info">
+                                <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                                <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                                <a href="#"><i class="fa fa-google-plus" aria-hidden="true"></i></a>
+                                <a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+                                <a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Single Footer Widget -->
+                    <div class="col-12 col-sm-6 col-lg-3">
+                        <div class="single-footer-widget">
+                            <div class="widget-title">
+                                <h5>QUICK LINK</h5>
+                            </div>
+                            <nav class="widget-nav">
+                                <ul>
+                                    <li><a href="#">Purchase</a></li>
+                                    <li><a href="#">FAQs</a></li>
+                                    <li><a href="#">Payment</a></li>
+                                    <li><a href="#">News</a></li>
+                                    <li><a href="#">Return</a></li>
+                                    <li><a href="#">Advertise</a></li>
+                                    <li><a href="#">Shipping</a></li>
+                                    <li><a href="#">Career</a></li>
+                                    <li><a href="#">Orders</a></li>
+                                    <li><a href="#">Policities</a></li>
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+
+                    <!-- Single Footer Widget -->
+                    <div class="col-12 col-sm-6 col-lg-3">
+                        <div class="single-footer-widget">
+                            <div class="widget-title">
+                                <h5>BEST SELLER</h5>
+                            </div>
+
+                            <!-- Single Best Seller Products -->
+                            <div class="single-best-seller-product d-flex align-items-center">
+                                <div class="product-thumbnail">
+                                    <a href="shop-details.html"><img src="{{asset ('front/img/bg-img/4.jpg')}} alt=""></a>
+                                </div>
+                                <div class="product-info">
+                                    <a href="shop-details.html">Cactus Flower</a>
+                                    <p>$10.99</p>
+                                </div>
+                            </div>
+
+                            <!-- Single Best Seller Products -->
+                            <div class="single-best-seller-product d-flex align-items-center">
+                                <div class="product-thumbnail">
+                                    <a href="shop-details.html"><img src="{{asset ('front/img/bg-img/5.jpg')}} alt=""></a>
+                                </div>
+                                <div class="product-info">
+                                    <a href="shop-details.html">Tulip Flower</a>
+                                    <p>$11.99</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Single Footer Widget -->
+                    <div class="col-12 col-sm-6 col-lg-3">
+                        <div class="single-footer-widget">
+                            <div class="widget-title">
+                                <h5>CONTACT</h5>
+                            </div>
+
+                            <div class="contact-information">
+                                <p><span>Address:</span> 505 Silk Rd, New York</p>
+                                <p><span>Phone:</span> +1 234 122 122</p>
+                                <p><span>Email:</span> info.deercreative@gmail.com</p>
+                                <p><span>Open hours:</span> Mon - Sun: 8 AM to 9 PM</p>
+                                <p><span>Happy hours:</span> Sat: 2 PM to 4 PM</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer Bottom Area -->
+        <div class="footer-bottom-area">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="border-line"></div>
+                    </div>
+                    <!-- Copywrite Text -->
+                    <div class="col-12 col-md-6">
+                        <div class="copywrite-text">
+                            <p>&copy; <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+</p>
+                        </div>
+                    </div>
+                    <!-- Footer Nav -->
+                    <div class="col-12 col-md-6">
+                        <div class="footer-nav">
+                            <nav>
+                                <ul>
+                                    <li><a href="#">Home</a></li>
+                                    <li><a href="#">About</a></li>
+                                    <li><a href="#">Service</a></li>
+                                    <li><a href="#">Portfolio</a></li>
+                                    <li><a href="#">Blog</a></li>
+                                    <li><a href="#">Contact</a></li>
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- ##### Footer Area End ##### -->
+
+    <!-- ##### All Javascript Files ##### -->
+    <!-- jQuery-2.2.4 js -->
+    <script src="{{ asset('front/js/jquery/jquery-2.2.4.min.js') }}"></script>
+    <script src="{{ asset('front/js/bootstrap/popper.min.js') }}"></script>
+    <script src="{{ asset('front/js/bootstrap/bootstrap.min.js') }}"></script>
+    <script src="{{ asset('front/js/plugins/plugins.js') }}"></script>
+    <script src="{{ asset('front/js/active.js') }}"></script>
+</body>
+
+
+
+
+
+{% endblock %}

@@ -1,0 +1,37 @@
+slim_homepage:
+    path:     /index
+    defaults: { _controller: SlimBundle:Default:index }
+slim_homepagefront:
+    path:     /indexfront
+    defaults: { _controller: SlimBundle:Default:indexfront }
+ajoutReclamation:
+    path:     /ajoutReclamation
+    defaults: { _controller: SlimBundle:Reclamation:ajoutReclamation }
+ajouterVote:
+    path:     /ajouterVote
+    defaults: { _controller: SlimBundle:Vote:ajouterVote   }
+AfficherReclamation:
+    path:     /AfficherReclamation
+    defaults: { _controller: SlimBundle:Reclamation:AfficherReclamation }
+SupprimerReclamation:
+    path:     /SupprimerReclamation{idreclamation}
+    defaults: { _controller: SlimBundle:Reclamation:SupprimerReclamation }
+AfficherNonReclamation:
+    path:     /AfficherNonReclamation
+    defaults: { _controller: SlimBundle:Reclamation:AfficherNonReclamation }
+AfficherOuiReclamation:
+    path:     /AfficherOuiReclamation
+    defaults: { _controller: SlimBundle:Reclamation:AfficherOuiReclamation }
+AfficherVote:
+    path:     /AfficherVote
+    defaults: { _controller: SlimBundle:Vote:AfficherVote }
+SupprimerVote:
+    path:     /SupprimerVote{idvote}
+    defaults: { _controller: SlimBundle:Vote:SupprimerVote }
+
+ModifierReclamation:
+    path:     /ModifierReclamation{idreclamation}
+    defaults: { _controller: SlimBundle:Reclamation:ModifierReclamation }
+AddRecherche:
+    path:     /json/{title}
+    defaults: { _controller: SlimBundle:Vote:searchAjax }

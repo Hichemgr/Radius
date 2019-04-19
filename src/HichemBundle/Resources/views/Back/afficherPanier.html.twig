@@ -1,0 +1,100 @@
+{% extends 'base.html.twig' %}
+{% block content %}
+<section class="content">
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="box">
+                <div class="box-header">
+                    <h3 class="box-title">Panier</h3>
+                </div><!-- /.box-header -->
+                <div class="box-body table-responsive">
+                    <table id="example2" class="table table-bordered table-hover">
+
+                        <thead>
+                        <tr>
+                            <td>Id panier</td>
+                            <td>Id utilisateur</td>
+                            <td>etat</td>
+                            <td>Supprimer</td>
+                            <td>Modifier</td>
+                        </tr>
+                        </thead>
+                        <tfoot>
+                        <tr>
+                            <td>Id panier</td>
+                            <td>Id utilisateur</td>
+                            <td>etat</td>
+                            <td>Supprimer</td>
+                            <td>Modifier</td>
+                        </tr>
+                        </tfoot>
+                        <tbody>
+                        {%  for entity in Panier %}
+                            <tr>
+                                <td>{{ entity.Idpanier }}</td>
+                                <td>{{ entity.Idutilisateur.Idutilisateur }}</td>
+                                <td>{{ entity.Etat }}</td>
+                                <td><a href="{{ path('supprimerPanier',{'id': entity.Idpanier}) }}"class="btn btn-danger">supprimer</a></td>
+                                <td><a href="{{ path('modifierPanier',{'id': entity.Idpanier}) }}"class="btn btn-success" >modifier</a></td>
+
+
+                            </tr>
+                        {% else %}
+                            <h1>Table is empty</h1>
+                        {%  endfor %}
+                        </tbody>
+                    </table>
+                    <div class="box-header">
+                        <h3 class="box-title">Ligne des produits</h3>
+                    </div><!-- /.box-header -->
+
+
+                    <table id="example2" class="table table-bordered table-hover">
+
+                        <thead>
+                        <tr>
+                        <tr>
+                            <td>Id Ligne</td>
+                            <td>Id panier</td>
+                            <td>Id produit</td>
+                            <td>Quantite</td>
+                            <td>Supprimer</td>
+
+                        </tr>
+                        </thead>
+                        <tfoot>
+                        <tr>
+                            <td>Id Ligne</td>
+                            <td>Id panier</td>
+                            <td>Id produit</td>
+                            <td>Quantite</td>
+                            <td>Supprimer</td>
+
+                        </tr>
+                        </tfoot>
+                        <tbody>
+                        {%  for entity in Ligneproduit %}
+                            <tr>
+                                <td>{{ entity.Idligne}}</td>
+                                <td>{{ entity.Idpanier.Idpanier}}</td>
+                                <td>{{ entity.Idproduit.Idproduit}}</td>
+                                <td>{{ entity.Quantite }}</td>
+                                <td><a href="{{ path('supprimerLigneproduit',{'id': entity.IdLigne}) }}"class="btn btn-danger">supprimer</a></td>
+
+
+
+                            </tr>
+                        {% else %}
+                            <h1>Table is empty</h1>
+                        {%  endfor %}
+                        </tbody>
+                    </table>
+
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

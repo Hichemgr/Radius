@@ -1,0 +1,43 @@
+slim_homepage:
+    path:     /index
+    defaults: { _controller: SlimBundle:Default:index }
+slim_homepagefront:
+    path:     /indexfront
+    defaults: { _controller: SlimBundle:Default:indexfront }
+slim_homepagefrontassisstance:
+    path:     /single-post
+    defaults: { _controller: SlimBundle:Default:singlepost }
+ajoutAssisstance:
+    path:     /ajoutAssisstance
+    defaults: { _controller: SlimBundle:Default:ajoutAssisstance }
+ajouterassistancefront:
+    path:     /ajouterassistancefront
+    defaults: { _controller: SlimBundle:Default:ajouterassistancefront }
+ajouterAssisstant:
+    path:     /ajouterAssisstant
+    defaults: { _controller: SlimBundle:Default:ajouterAssisstant }
+ajouterConseil:
+    path:     /ajouterConseil
+    defaults: { _controller: SlimBundle:Default:ajouterConseil }
+afficherAssisstant:
+    path:     /afficherAssisstant
+    defaults: { _controller: SlimBundle:Default:afficherAssisstant }
+supprimerAssisstant:
+    path:     /supprimerAssisstant{IdAssisstant}
+    defaults: { _controller: SlimBundle:Default:supprimerAssisstant }
+supprimerAssisstance:
+    path:     /supprimerAssisstance{idAssisstance}
+    defaults: { _controller: SlimBundle:Default:supprimerAssisstance }
+supprimerConseil:
+    path:     /supprimerConseil{idConseil}
+    defaults: { _controller: SlimBundle:Default:supprimerConseil }
+modifierAssisstant:
+    path:     /modifierAssisstant{IdAssisstant}
+    defaults: { _controller: SlimBundle:Default:modifierAssisstant }
+modifierAssisstance:
+    path:     /modifierAssisstance{idAssisstance}
+    defaults: { _controller: SlimBundle:Default:modifierAssisstance }
+calendar:
+    path:     /calendar
+    defaults: { _controller: SlimBundle:Default:calendar }
+

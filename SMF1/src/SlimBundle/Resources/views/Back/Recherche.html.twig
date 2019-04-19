@@ -1,0 +1,32 @@
+<div class="box-body table-responsive">
+
+    <table id="example2" class="table table-bordered table-hover">
+        <thead>
+        <tr>
+
+            <td>Nom Produit</td>
+            <td>note</td>
+            <td>commentaire</td>
+            <td>Supprimer</td>
+
+        </tr>
+        </thead>
+
+            {%  for entity in Vote %}
+                <tr>
+                    <td>{{ entity.nomproduit }}</td>
+                    <td>{{ entity.note }}</td>
+                    <td>{{ entity.commentaire }}</td>
+
+                    <td><a href="{{ path('SupprimerVote',{'idvote': entity.idvote}) }}" class="btn btn-danger">Supprimer</a></td>
+
+                </tr>
+
+
+            {% else %}
+                <h1>Table is empty</h1>
+            {%  endfor %}
+
+</table>
+
+</div>

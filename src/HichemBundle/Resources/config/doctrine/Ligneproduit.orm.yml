@@ -1,0 +1,47 @@
+HichemBundle\Entity\Ligneproduit:
+    type: entity
+    table: ligneproduit
+    indexes:
+        idpanier:
+            columns:
+                - idpanier
+        idproduit:
+            columns:
+                - idproduit
+    id:
+        idligne:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            id: true
+            generator:
+                strategy: IDENTITY
+    fields:
+        quantite:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+    manyToOne:
+        idpanier:
+            targetEntity: Panier
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                idpanier:
+                    referencedColumnName: idpanier
+            orphanRemoval: false
+        idproduit:
+            targetEntity: Produit
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                idproduit:
+                    referencedColumnName: idproduit
+            orphanRemoval: false
+    lifecycleCallbacks: {  }

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="SlimBundle\Entity\Assisstance" table="assisstance">
+    <id name="idAssisstance" type="integer" column="id_assisstance">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="idClient" type="string" column="id_client" length="20" nullable="false">
+      <options>
+        <option name="fixed"/>
+      </options>
+    </field>
+    <field name="idAssisstant" type="string" column="id_assisstant" length="20" nullable="false">
+      <options>
+        <option name="fixed"/>
+      </options>
+    </field>
+    <field name="dateass" type="date" column="dateAss" nullable="false"/>
+    <field name="type" type="string" column="type" length="10" nullable="false">
+      <options>
+        <option name="fixed"/>
+      </options>
+    </field>
+  </entity>
+</doctrine-mapping>

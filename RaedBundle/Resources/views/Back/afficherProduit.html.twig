@@ -1,0 +1,76 @@
+{% extends 'base.html.twig' %}
+{% block content %}
+
+
+    <section class="content">
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="box">
+                    <div class="box-header"><center>
+                            <h3 class="box-title">Liste des Produits</h3></center>
+                    </div><!-- /.box-header -->
+                    <aside class="s_widget search_widget">
+                        <div class="input-group">
+                            <form type="POST">
+                                <input type="text" name="title" id="title" class="form-control border-top-0 border-left-0 border-right-0 rounded-0 pl-4" placeholder="What are you looking for?">
+                            </form>                                            <span class="input-group-btn">
+                                        <button class="btn btn-default" type="button"><i class="fa fa-search" aria-hidden="true"></i></button>
+                                    </span></div></aside><br>
+                    <tbody>
+                    <div id="test">
+                    <div class="box-body table-responsive">
+
+                        <table id="example2" class="table table-bordered table-hover">
+                            <thead>
+                            <tr>
+
+                                <td>Nom Produit</td>
+                                <td>Prix</td>
+                                <td>Quantite</td>
+                                <td>Note</td>
+                                <td>Description</td>
+                                <td>Saison</td>
+                                <td> </td>
+                                <td> </td>
+                            </tr>
+                            </thead>
+
+                            {%  for entity in Produit %}
+                                <tr>
+
+                                    <td>{{ entity.nomproduit }}</td>
+                                    <td>{{ entity.prix }} TND</td>
+                                    <td>{{ entity.quantite }} Pieces</td>
+                                    <td>{{ entity.note }}/5</td>
+                                    <td>{{ entity.description }}</td>
+                                    <td>{{ entity.saison }}</td>
+                                    <td><a href="{{ path('modifierProduit',{'idproduit': entity.idproduit}) }}" class="btn btn-success">Modifier</a></td>
+                                    <td><a href="{{ path('supprimerProduit',{'idproduit':entity.idproduit}) }}" class="btn btn-danger">Supprimer</a></td>
+
+                                </tr>
+
+                            {% else %}
+                                <h1>Table is empty</h1>
+                            {%  endfor %}</div>
+                            </tbody>
+                        </table>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row no-print">
+            <center><a href="{{ path('ajouterProduit') }}" class="btn btn-blue" >Ajouter Un Produit</a></center>
+
+<p> </p>
+            <div class="col-xs-12">
+                <center> <button class="btn btn-default" onclick="window.print();"><i class="fa fa-print"></i> Print</button></center>
+
+            </div>
+        </div>
+    </section>
+<script src="{{ asset('scripts/jquery-3.3.1.min.js') }}"></script>
+    <script src="{{ asset('scripts/M.js') }}"></script>
+
+{% endblock %}
+

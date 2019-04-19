@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="SlimBundle\Entity\Reponse" table="reponse">
+    <indexes>
+      <index name="fk_utilisat" columns="idutilisateur"/>
+      <index name="idquestion" columns="idquestion"/>
+    </indexes>
+    <id name="idreponse" type="integer" column="idreponse">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="contenu" type="string" column="contenu" length="1000" nullable="false">
+      <options>
+        <option name="fixed"/>
+      </options>
+    </field>
+    <field name="visible" type="integer" column="visible" nullable="false">
+      <options>
+        <option name="unsigned"/>
+      </options>
+    </field>
+    <field name="nom" type="string" column="nom" length="100" nullable="true">
+      <options>
+        <option name="fixed"/>
+      </options>
+    </field>
+    <many-to-one field="idutilisateur" target-entity="Utilisateur" fetch="LAZY">
+      <join-columns>
+        <join-column name="idutilisateur" referenced-column-name="idutilisateur"/>
+      </join-columns>
+    </many-to-one>
+    <many-to-one field="idquestion" target-entity="Question" fetch="LAZY">
+      <join-columns>
+        <join-column name="idquestion" referenced-column-name="idquestion"/>
+      </join-columns>
+    </many-to-one>
+  </entity>
+</doctrine-mapping>

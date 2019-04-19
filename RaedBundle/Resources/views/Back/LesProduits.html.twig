@@ -1,0 +1,38 @@
+<div class="box-body table-responsive">
+
+    <table id="example2" class="table table-bordered table-hover">
+        <thead>
+        <tr>
+
+            <td>Nom Produit</td>
+            <td>Prix</td>
+            <td>Quantite</td>
+            <td>Note</td>
+            <td>Description</td>
+            <td>Saison</td>
+            <td> </td>
+            <td> </td>
+        </tr>
+        </thead>
+
+        {%  for entity in Produit %}
+        <tr>
+
+            <td>{{ entity.nomproduit }}</td>
+            <td>{{ entity.prix }} TND</td>
+            <td>{{ entity.quantite }} Pieces</td>
+            <td>{{ entity.note }}/5</td>
+            <td>{{ entity.description }}</td>
+            <td>{{ entity.saison }}</td>
+            <td><a href="{{ path('modifierProduit',{'idproduit': entity.idproduit}) }}" class="btn btn-success">Modifier</a></td>
+            <td><a href="{{ path('supprimerProduit',{'idproduit':entity.idproduit}) }}" class="btn btn-danger">Supprimer</a></td>
+
+        </tr>
+
+        {% else %}
+        <h1>Table is empty</h1>
+    {%  endfor %}</div>
+</tbody>
+</table>
+
+</div>

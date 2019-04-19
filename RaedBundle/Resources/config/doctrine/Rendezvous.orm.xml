@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="SlimBundle\Entity\Rendezvous" table="rendezvous">
+    <indexes>
+      <index name="fk_utili" columns="idutilisateur"/>
+    </indexes>
+    <id name="idrendezvous" type="integer" column="idrendezvous">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="sujet" type="string" column="sujet" length="100" nullable="false">
+      <options>
+        <option name="fixed"/>
+      </options>
+    </field>
+    <field name="lieu" type="string" column="lieu" length="100" nullable="false">
+      <options>
+        <option name="fixed"/>
+      </options>
+    </field>
+    <field name="daterendezvous" type="date" column="daterendezvous" nullable="false"/>
+    <field name="etat" type="integer" column="etat" nullable="false">
+      <options>
+        <option name="unsigned"/>
+      </options>
+    </field>
+    <many-to-one field="idutilisateur" target-entity="Utilisateur" fetch="LAZY">
+      <join-columns>
+        <join-column name="idutilisateur" referenced-column-name="idutilisateur"/>
+      </join-columns>
+    </many-to-one>
+  </entity>
+</doctrine-mapping>

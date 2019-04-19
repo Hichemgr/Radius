@@ -1,0 +1,80 @@
+slim_homepage:
+    path:     /index
+    defaults: { _controller: SlimBundle:Default:index }
+slim_homepagefront:
+    path:     /indexfront
+    defaults: { _controller: SlimBundle:Default:indexfront }
+slim_homepagefrontassisstance:
+    path:     /single-post
+    defaults: { _controller: SlimBundle:Default:singlepost }
+slim_homepagefrontshop:
+    path:     /shop
+    defaults: { _controller: SlimBundle:Default:shop }
+slim_homepagefrontshopdetails:
+    path:     /shopdetails/{idproduit}
+    defaults: { _controller: SlimBundle:Default:shopdetails }
+ajoutAssisstance:
+    path:     /ajoutAssisstance
+    defaults: { _controller: SlimBundle:Default:ajoutAssisstance }
+ajouterAssisstant:
+    path:     /ajouterAssisstant
+    defaults: { _controller: SlimBundle:Default:ajouterAssisstant }
+afficherAssisstant:
+        path:     /afficherAssisstant
+        defaults: { _controller: SlimBundle:Default:afficherAssisstant }
+
+supprimerAssisstant:
+    path:     /supprimerAssisstant{IdAssisstant}
+    defaults: { _controller: SlimBundle:Default:supprimerAssisstant }
+supprimerAssisstance:
+    path:     /supprimerAssisstance{idAssisstance}
+    defaults: { _controller: SlimBundle:Default:supprimerAssisstance }
+supprimerConseil:
+    path:     /supprimerConseil{idConseil}
+    defaults: { _controller: SlimBundle:Default:supprimerConseil }
+modifierAssisstant:
+        path:     /modifierAssisstant{IdAssisstant}
+        defaults: { _controller: SlimBundle:Default:modifierAssisstant }
+modifierAssisstance:
+    path:     /modifierAssisstance{idAssisstance}
+    defaults: { _controller: SlimBundle:Default:modifierAssisstance }
+afficherProduit:
+    path:     /afficherProduit
+    defaults: { _controller: SlimBundle:Default:afficherProduit }
+ajouterProduit:
+    path:     /ajouterProduit
+    defaults: { _controller: SlimBundle:Default:ajouterProduit }
+modifierProduit:
+    path:     /modifierProduit{idproduit}
+    defaults: { _controller: SlimBundle:Default:modifierProduit }
+supprimerProduit:
+    path:     /supprimerProduit{idproduit}
+    defaults: { _controller: SlimBundle:Default:supprimerProduit }
+uploadProduit:
+    path:     /uploadProduit
+    defaults: { _controller: SlimBundle:Default:uploadProduit }
+afficherCatalogue:
+    path:     /afficherCatalogue
+    defaults: { _controller: SlimBundle:Catalogue:afficherCatalogue }
+ajouterCatalogue:
+    path:     /ajouterCatalogue
+    defaults: { _controller: SlimBundle:Catalogue:ajouterCatalogue }
+modifierCatalogue:
+    path:     /modifierCatalogue{idcatalogue}
+    defaults: { _controller: SlimBundle:Catalogue:modifierCatalogue }
+supprimerCatalogue:
+    path:     /supprimerCatalogue{idcatalogue}
+    defaults: { _controller: SlimBundle:Catalogue:supprimerCatalogue }
+slim_homepagefrontwishlist:
+    path:     /wishlist
+    defaults: { _controller: SlimBundle:Wishlist:wishlist }
+
+ajouterwishlist:
+    path:     /ajouterwishlist/{nomproduit}
+    defaults: { _controller: SlimBundle:Wishlist:ajouterwishlist }
+supprimerWishlist:
+    path:     /supprimerWishlist/{idwishlist}
+    defaults: { _controller: SlimBundle:Wishlist:supprimerWishlist }
+Search:
+    path:     /json/{title}
+    defaults: { _controller: SlimBundle:Default:searchAjax}

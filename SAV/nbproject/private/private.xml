@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-private xmlns="http://www.netbeans.org/ns/project-private/1">
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
+    <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
+        <group>
+            <file>file:/C:/Users/pc%20hp/Documents/NetBeansProjects/SAV/src/GRAPHE/QuesReponsesController.java</file>
+            <file>file:/C:/Users/pc%20hp/Documents/NetBeansProjects/SAV/src/entites/utiliobjet.java</file>
+            <file>file:/C:/Users/pc%20hp/Documents/NetBeansProjects/SAV/src/Service/ProduitService.java</file>
+            <file>file:/C:/Users/pc%20hp/Documents/NetBeansProjects/SAV/src/GRAPHECLIENT/RecClientController.java</file>
+            <file>file:/C:/Users/pc%20hp/Documents/NetBeansProjects/SAV/src/GRAPHE/QuesReponses.fxml</file>
+            <file>file:/C:/Users/pc%20hp/Documents/NetBeansProjects/SAV/src/entites/Produit.java</file>
+            <file>file:/C:/Users/pc%20hp/Documents/NetBeansProjects/SAV/src/Service/QuestionService.java</file>
+            <file>file:/C:/Users/pc%20hp/Documents/NetBeansProjects/SAV/src/entites/Reclamation.java</file>
+            <file>file:/C:/Users/pc%20hp/Documents/NetBeansProjects/SAV/src/GRAPHECLIENT/SAVCLIENT.java</file>
+            <file>file:/C:/Users/pc%20hp/Documents/NetBeansProjects/SAV/src/entites/RendezVous.java</file>
+            <file>file:/C:/Users/pc%20hp/Documents/NetBeansProjects/SAV/src/Service/UtiliseObjetService.java</file>
+            <file>file:/C:/Users/pc%20hp/Documents/NetBeansProjects/SAV/src/Service/RendezvousService.java</file>
+            <file>file:/C:/Users/pc%20hp/Documents/NetBeansProjects/SAV/src/entites/Reponse.java</file>
+            <file>file:/C:/Users/pc%20hp/Documents/NetBeansProjects/SAV/src/sav/SAV.java</file>
+            <file>file:/C:/Users/pc%20hp/Documents/NetBeansProjects/SAV/src/Utils/MyDBcon.java</file>
+            <file>file:/C:/Users/pc%20hp/Documents/NetBeansProjects/SAV/src/entites/utilisateur.java</file>
+            <file>file:/C:/Users/pc%20hp/Documents/NetBeansProjects/SAV/src/GRAPHE/RecUtilisateurController.java</file>
+            <file>file:/C:/Users/pc%20hp/Documents/NetBeansProjects/SAV/src/GRAPHE/recUtilisateur.fxml</file>
+            <file>file:/C:/Users/pc%20hp/Documents/NetBeansProjects/SAV/src/GRAPHECLIENT/RecClient.fxml</file>
+            <file>file:/C:/Users/pc%20hp/Documents/NetBeansProjects/SAV/src/GRAPHECLIENT/ReponsesController.java</file>
+            <file>file:/C:/Users/pc%20hp/Documents/NetBeansProjects/SAV/nbproject/build-impl.xml</file>
+            <file>file:/C:/Users/pc%20hp/Documents/NetBeansProjects/SAV/src/GRAPHE/SAV.java</file>
+            <file>file:/C:/Users/pc%20hp/Documents/NetBeansProjects/SAV/src/Service/VoteService.java</file>
+            <file>file:/C:/Users/pc%20hp/Documents/NetBeansProjects/SAV/src/Service/ReclamationService.java</file>
+            <file>file:/C:/Users/pc%20hp/Documents/NetBeansProjects/SAV/src/entites/Question.java</file>
+            <file>file:/C:/Users/pc%20hp/Documents/NetBeansProjects/SAV/src/Service/ReponseService.java</file>
+            <file>file:/C:/Users/pc%20hp/Documents/NetBeansProjects/SAV/src/entites/Vote.java</file>
+            <file>file:/C:/Users/pc%20hp/Documents/NetBeansProjects/SAV/src/GRAPHECLIENT/Reponses.fxml</file>
+        </group>
+    </open-files>
+</project-private>

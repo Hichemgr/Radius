@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GRAPHE.QuesReponsesController">
+   <children>
+      <TextField fx:id="rep" layoutX="181.0" layoutY="424.0" prefHeight="25.0" prefWidth="524.0" />
+      <Button fx:id="ajouterRep" layoutX="717.0" layoutY="526.0" mnemonicParsing="false" onAction="#ajouterRep" text="ajouter" />
+      <Button fx:id="retour" layoutX="31.0" layoutY="26.0" mnemonicParsing="false" onAction="#retour" text="retour" />
+      <TableView fx:id="tabq" layoutX="181.0" layoutY="171.0" prefHeight="238.0" prefWidth="524.0">
+         <columns>
+            <TableColumn fx:id="nomq" prefWidth="141.0" text="nom" />
+            <TableColumn fx:id="contenuq" prefWidth="382.0" text="contenu" />
+         </columns>
+      </TableView>
+      <Label layoutX="381.0" layoutY="97.0" prefHeight="35.0" prefWidth="167.0" text="Reponses">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

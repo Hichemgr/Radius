@@ -1,0 +1,35 @@
+<div class="box-body table-responsive">
+    <table id="example2" class="table table-bordered table-hover">
+        <thead>
+        <tr>
+
+            <td>Nom Produit</td>
+            <td>Date Debut</td>
+            <td>Date Fin</td>
+            <td>Saison</td>
+            <td> </td>
+            <td> </td>
+        </tr>
+        </thead>
+
+        <tbody>
+        {%  for entity in Catalogue %}
+            <tr>
+
+                <td>{{ entity.nom}}</td>
+                <td>{{ entity.datedebut|date }} </td>
+                <td>{{ entity.datefin|date}} </td>
+                <td>{{ entity.saison }}</td>
+                <td><a href="{{ path('modifierCatalogue',{'idcatalogue': entity.idcatalogue}) }}" class="btn btn-success">Modifier</a></td>
+                <td><a href="{{ path('supprimerCatalogue',{'idcatalogue':entity.idcatalogue}) }}" class="btn btn-danger">Supprimer</a></td>
+
+            </tr>
+
+        {% else %}
+            <h1>Table is empty</h1>
+        {%  endfor %}
+        </tbody>
+    </table>
+
+</div>
+

@@ -1,0 +1,19 @@
+{% extends 'base.html.twig' %}
+
+{% block content %}
+    <center>
+        <h1>Ajouter Assisstant</h1>
+    </center>
+    {% form_theme Assisstant_form 'bootstrap_4_horizontal_layout.html.twig' %}
+    {{ form(Assisstant_form) }}
+
+    {% for flashMessage in app.session.flashbag.get('notice') %}
+
+        <div class="alert alert-danger">
+            {{ flashMessage }}
+        </div>
+
+    {% endfor %}
+
+{% endblock %}
+

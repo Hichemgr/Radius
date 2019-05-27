@@ -1,0 +1,19 @@
+{% extends 'base.html.twig' %}
+
+{% block content %}
+    <center>
+        <h1>Ajouter Catalogue</h1>
+    </center>
+    {% form_theme Catalogue_form 'bootstrap_4_horizontal_layout.html.twig' %}
+    {{ form(Catalogue_form) }}
+
+    {% for flashMessage in app.session.flashbag.get('notice') %}
+
+        <div class="alert alert-danger">
+            {{ flashMessage }}
+        </div>
+
+    {% endfor %}
+
+{% endblock %}
+

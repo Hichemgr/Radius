@@ -1,0 +1,110 @@
+{% extends 'base.html.twig' %}
+{% block content %}
+
+
+    <section class="content">
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="box">
+                    <div class="box-header"><center>
+                            <h3 class="box-title">Liste des Assisstant</h3></center>
+                    </div><!-- /.box-header -->
+                    <div class="box-body table-responsive">
+                        <table id="example2" class="table table-bordered table-hover">
+                            <thead>
+                            <tr>
+                                <td>Nom Assisstant</td>
+                                <td>Prenom Assisstant</td>
+                                <td>Cin assisstant</td>
+                                <td>Etat</td>
+                                <td>Supprimer</td>
+                                <td>Modifier</td>
+                            </tr>
+                            </thead>
+
+                            <tbody>
+                            {%  for entity in Assisstant %}
+                                <tr>
+                                    <td>{{ entity.nom }}</td>
+                                    <td>{{ entity.prenom }}</td>
+                                    <td>{{ entity.cin }}</td>
+                                    <td>{{ entity.etat }}</td>
+                                    <td><a href="{{ path('supprimerAssisstant',{'IdAssisstant': entity.IdAssisstant}) }}" class="btn btn-danger">Supprimer</a></td>
+                                    <td><a href="{{ path('modifierAssisstant',{'IdAssisstant': entity.IdAssisstant}) }}" class="btn btn-success">Modifier</a></td>
+
+                                </tr>
+                            {% else %}
+                                <h1>Table is empty</h1>
+                            {%  endfor %}
+                            </tbody>
+                        </table>
+                        <center>
+                            <a href="{{ path('ajouterAssisstant') }}" class="btn btn-green">Ajouter Des Assisstant</a>
+
+
+                            <h3 class="box-title">Liste des Assisstance</h3></center>
+                        <table id="example2" class="table table-bordered table-hover">
+                            <thead>
+                            <tr>
+                                <td>Id client</td>
+                                <td>Id Assisstant</td>
+                                <td>Date assisstance</td>
+                                <td>Type</td>
+                                <td>Supprimer</td>
+                                <td>Modifier</td>
+                            </tr>
+                            </thead>
+
+                            <tbody>
+                            {%  for entity in Assisstance %}
+                                <tr>
+                                    <td>{{ entity.idClient }}</td>
+                                    <td>{{ entity.idAssisstant }}</td>
+                                    <td>{{ entity.dateass|date('Y-m-d H:i:s') }}</td>
+                                    <td>{{ entity.type }}</td>
+
+                                    <td><a href="{{ path('supprimerAssisstance',{'idAssisstance': entity.idAssisstance}) }}" class="btn btn-danger">Supprimer</a></td>
+                                    <td><a href="{{ path('modifierAssisstance',{'idAssisstance': entity.idAssisstance}) }}" class="btn btn-success">Modifier</a></td>
+
+                                </tr>
+
+                            {%  endfor %}
+                            </tbody>
+                        </table>
+                        <center>
+                            <h3 class="box-title">Liste des Conseils</h3></center>
+                        <table id="example2" class="table table-bordered table-hover">
+                            <thead>
+                            <tr>
+                                <td>Type</td>
+                                <td>Contenu</td>
+                                <td>Supprimer</td>
+                            </tr>
+                            </thead>
+
+                            <tbody>
+                            {%  for entity in Conseil %}
+                                <tr>
+                                    <td>{{ entity.type }}</td>
+                                    <td>{{ entity.contenu }}</td>
+                                    <td><a href="{{ path('supprimerConseil',{'idConseil': entity.idConseil}) }}" class="btn btn-danger">Supprimer</a></td>
+                                </tr>
+
+                            {%  endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row no-print">
+            <div class="col-xs-12">
+                <button class="btn btn-default" onclick="window.print();"><i class="fa fa-print"></i> Print</button>
+
+            </div>
+        </div>
+    </section>
+
+
+{% endblock %}
+

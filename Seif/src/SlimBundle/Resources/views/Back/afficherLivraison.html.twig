@@ -1,0 +1,135 @@
+{% extends 'base.html.twig' %}
+{% block content %}
+
+    {# Call NotificationsBundles's assets #}
+    {{ notifications_assets() }}
+    <script>
+        /**
+         * After calling notifications_assets() "pusher" is now available
+         * and you can use it this way
+         */
+
+            // select the channel you want to listen to
+        var channel = pusher.subscribe("notifications");// notifications channel
+        channel.bind("my-event", function(data) {
+            console.log('from notifications channel', data);
+        });
+
+        var channel = pusher.subscribe("messages");// messages channel
+        channel.bind("my-event", function(data) {
+            console.log('from messages channel', data);
+        });
+    </script>
+
+    <section class="content">
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="box">
+                    <div class="box-header"><center>
+                            <h3 class="box-title">Liste des livraisons</h3></center>
+                    </div><!-- /.box-header -->
+                    <div class="box-body table-responsive">
+                        <table id="example2" class="table table-bordered table-hover">
+                            <thead>
+                            <tr>
+                                <td>Nom Client</td>
+                                <td>Nom Livreur</td>
+                                <td>Montant</td>
+                                <td>Addresse</td>
+                                <td>Date</td>
+                                <td>Etat</td>
+                                <td>Supprimer</td>
+                                <td>Modifier</td>
+                                <td>Affecter un livreur</td>
+
+                            </tr>
+                            </thead>
+
+                            <tbody>
+                            {%  for entity in Livraison %}
+                                <tr>
+                                    <td>{{ entity.nomclient }}</td>
+                                    <td>{{ entity.nomlivreur }}</td>
+                                    <td>{{ entity.montant }}</td>
+                                    <td>{{ entity.adresse }}</td>
+                                    <td>{{ entity.date|date('Y-m-d H:i:s') }}</td>
+                                    <td>{{ entity.etat }}</td>
+                                    <td><a href="{{ path('supprimerLivraison',{'idLivraison': entity.idLivraison}) }}" class="btn btn-danger">Supprimer</a></td>
+                                    <td><a href="{{ path('modifierLivraison',{'idLivraison': entity.idLivraison}) }}" class="btn btn-success">Modifier</a></td>
+                                    {% if entity.etat==0  %}
+                                        <td><a href="{{ path('afficherLivreurDispo',{'idLivraison': entity.idLivraison}) }}" class="btn btn-danger">Affecter un livreur</a></td>
+                                    {% elseif entity.etat==1 %}
+                                        <td><a href="{{ path('TerminerLivraison',{'idLivraison': entity.idLivraison ,'nomLivreur': entity.nomlivreur }) }}" class="btn btn-success">Livraison terminée</a></td>
+                                    {% else %}
+                                        <td></td>
+                                    {% endif %}
+                                </tr>
+                            {% else %}
+                                <h1>Table is empty</h1>
+                            {%  endfor %}
+                            </tbody>
+                        </table>
+                        <div class="pagination_area">
+                            {{ knp_pagination_render(Livraison) }}
+                        </div>
+                        <br>
+                        <br>
+                    </div>
+                    <div class="box-body table-responsive">
+                        <h3 class="box-title" align = center>Liste des livreurs</h3>
+                        <table id="example3" class="table table-bordered table-hover">
+                            <thead>
+                            <tr>
+                                <td>Nom Livreur</td>
+                                <td>Prenom Livreur</td>
+                                <td>Cin</td>
+                                <td>Etat</td>
+                                <td>Supprimer</td>
+                                <td>Modifier</td>
+                            </tr>
+                            </thead>
+
+                            <tbody>
+                            {%  for entity in Livreur %}
+                                <tr>
+                                    <td>{{ entity.nom }}</td>
+                                    <td>{{ entity.prenom }}</td>
+                                    <td>{{ entity.cin }}</td>
+                                    <td>{{ entity.etat }}</td>
+                                    <td><a href="{{ path('supprimerLivreur',{'idLivreur': entity.idLivreur}) }}" class="btn btn-danger">Supprimer</a></td>
+                                    <td><a href="{{ path('modifierLivreur',{'idLivreur': entity.idLivreur}) }}" class="btn btn-success">Modifier</a></td>
+
+
+
+                                </tr>
+                            {% else %}
+                                <h1>Table is empty</h1>
+                            {%  endfor %}
+                            </tbody>
+                        </table>
+                        <div class="pagination_area">
+                            {{ knp_pagination_render(Livreur) }}
+                        </div>
+                    </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row no-print">
+            <div class="col-xs-12">
+                <button class="btn btn-default" onclick="window.print();"><i class="fa fa-print"></i> Print</button>
+
+            </div>
+        </div>
+
+        <center>
+            <a href="{{ path('ajouterLivreur') }}" class="btn btn-green">Ajouter Livreur</a>
+
+
+            </center>
+    </section>
+
+
+
+{% endblock %}
+

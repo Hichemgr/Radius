@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="SlimBundle\Entity\Livraison" table="livraison">
+    <indexes>
+      <index name="fk_user" columns="id_User"/>
+      <index name="fk_commande" columns="idcommande"/>
+    </indexes>
+    <id name="idLivraison" type="integer" column="ID_Livraison">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="montant" type="float" column="Montant" precision="10" scale="0" nullable="true"/>
+    <field name="etat" type="integer" column="Etat" nullable="true">
+      <options>
+        <option name="unsigned"/>
+      </options>
+    </field>
+    <field name="date" type="date" column="Date" nullable="true"/>
+    <field name="adresse" type="string" column="Adresse" length="100" nullable="false">
+      <options>
+        <option name="fixed"/>
+      </options>
+    </field>
+    <field name="longitude" type="float" column="Longitude" precision="10" scale="0" nullable="true"/>
+    <field name="latitude" type="float" column="Latitude" precision="10" scale="0" nullable="true"/>
+    <field name="nomclient" type="string" column="nomClient" length="30" nullable="true">
+      <options>
+        <option name="fixed"/>
+      </options>
+    </field>
+    <field name="nomlivreur" type="string" column="nomLivreur" length="30" nullable="true">
+      <options>
+        <option name="fixed"/>
+      </options>
+    </field>
+    <many-to-one field="idUser" target-entity="Utilisateur" fetch="LAZY">
+      <join-columns>
+        <join-column name="id_User" referenced-column-name="idutilisateur"/>
+      </join-columns>
+    </many-to-one>
+    <many-to-one field="idcommande" target-entity="Commande" fetch="LAZY">
+      <join-columns>
+        <join-column name="idcommande" referenced-column-name="id_commande"/>
+      </join-columns>
+    </many-to-one>
+  </entity>
+</doctrine-mapping>

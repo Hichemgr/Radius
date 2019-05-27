@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.chart.BarChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="AnchorPane" layoutX="1280.0" layoutY="720.0" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="presentation.UtilisateurbackController">
+   <children>
+      <ImageView fx:id="logout" fitHeight="98.0" fitWidth="88.0" layoutX="-131.0" layoutY="-704.0" onMouseClicked="#logout" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../image/logout.png" />
+         </image>
+      </ImageView>
+      <TabPane layoutX="-1023.0" layoutY="-704.0" prefHeight="543.0" prefWidth="1100.0" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+          <Tab text="List utilisateurs">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="487.0" prefWidth="812.0">
+                     <children>
+                        <TableView fx:id="table" prefHeight="365.0" prefWidth="812.0">
+                          <columns>
+                            <TableColumn fx:id="cin" prefWidth="61.0" text="Cin" />
+                              <TableColumn fx:id="nom" prefWidth="71.0" text="Nom" />
+                              <TableColumn fx:id="prenom" prefWidth="81.0" text="Prenom" />
+                              <TableColumn fx:id="mail" prefWidth="87.0" text="Adresse mail" />
+                              <TableColumn fx:id="telephone" prefWidth="75.0" text="Telephone" />
+                              <TableColumn fx:id="date" prefWidth="104.0" text="Date inscription" />
+                              <TableColumn fx:id="role" prefWidth="68.0" text="Role" />
+                              <TableColumn fx:id="nbpoint" prefWidth="84.0" text="Points fidélité" />
+                          </columns>
+                        </TableView>
+                        <TextField fx:id="recherche" layoutX="332.0" layoutY="417.0" onKeyPressed="#rechh" onKeyReleased="#rechh" onKeyTyped="#rechh" promptText="Rechercher" />
+                        <ImageView fitHeight="140.0" fitWidth="100.0" layoutX="956.0" layoutY="335.0" onMouseClicked="#desaaac" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../image/off.png" />
+                           </image>
+                        </ImageView>
+                        <Text layoutX="847.0" layoutY="392.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Désactiver:">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Text>
+                        <Text layoutX="847.0" layoutY="136.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Supprimer:">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Text>
+                        <Text layoutX="875.0" layoutY="258.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Activer:">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Text>
+                        <ImageView fitHeight="140.0" fitWidth="100.0" layoutX="956.0" layoutY="201.0" onMouseClicked="#acccc" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../image/on.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="88.0" fitWidth="99.0" layoutX="514.0" layoutY="385.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../image/search.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="140.0" fitWidth="100.0" layoutX="956.0" layoutY="67.0" onMouseClicked="#supp" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../image/remove.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+          <Tab text="Ajouter ">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="477.0" prefWidth="769.0">
+                     <children>
+                        <TextField fx:id="cinn" layoutX="332.0" layoutY="45.0" promptText="Cin" />
+                        <TextField fx:id="nomm" layoutX="332.0" layoutY="85.0" promptText="Nom" />
+                        <TextField fx:id="prenomm" layoutX="332.0" layoutY="124.0" promptText="Prenom" />
+                        <TextField fx:id="maill" layoutX="332.0" layoutY="165.0" promptText="Adresse mail" />
+                        <TextField fx:id="telephonee" layoutX="332.0" layoutY="211.0" promptText="Telephone" />
+                        <DatePicker fx:id="datee" layoutX="332.0" layoutY="251.0" prefHeight="25.0" prefWidth="150.0" />
+                        <ComboBox fx:id="Combobox" layoutX="332.0" layoutY="292.0" prefWidth="150.0" visibleRowCount="2" />
+                        <TextField fx:id="adresse" layoutX="333.0" layoutY="331.0" promptText="Adresse" />
+                        <PasswordField fx:id="mdpp" layoutX="332.0" layoutY="370.0" promptText="Mot de passe" />
+                        <ImageView fx:id="add" fitHeight="80.0" fitWidth="97.0" layoutX="545.0" layoutY="150.0" onMouseClicked="#add" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../image/employee.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+            <Tab text="Statistique">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <BarChart fx:id="BarChart" layoutX="40.0" layoutY="84.0" prefHeight="400.0" prefWidth="648.0">
+                          <xAxis>
+                            <CategoryAxis side="BOTTOM" />
+                          </xAxis>
+                          <yAxis>
+                            <NumberAxis side="LEFT" />
+                          </yAxis>
+                        </BarChart>
+                     </children>
+                  </AnchorPane>
+              </content>
+            </Tab>
+        </tabs>
+      </TabPane>
+      <AnchorPane id="menuContainer" layoutX="-1239.0" layoutY="-704.0" prefHeight="586.0" prefWidth="165.0">
+         <children>
+            <VBox prefHeight="355.0" prefWidth="165.0" spacing="10.0">
+               <children>
+                  <Button fx:id="menuAcceuil" mnemonicParsing="false" onMouseClicked="#acceuil" prefHeight="45.0" prefWidth="165.0" style="-fx-alignment: baseline-left;" stylesheets="@../../../pepinier/src/css/mainSheet.css" text="Utilisateur" textFill="WHITE">
+                     <padding>
+                        <Insets left="60.0" />
+                     </padding>
+                     <styleClass>
+                        <String fx:value="menuBoutonsPressed" />
+                        <String fx:value="menuBoutons" />
+                        <String fx:value="bgAccueil" />
+                     </styleClass>
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="menuProduit" mnemonicParsing="false" onMouseClicked="#prod" prefHeight="45.0" prefWidth="165.0" style="-fx-alignment: baseline-left;" stylesheets="@../../../pepinier/src/css/mainSheet.css" text="Produit" textFill="WHITE">
+                     <padding>
+                        <Insets left="60.0" />
+                     </padding>
+                     <styleClass>
+                        <String fx:value="menuBoutons" />
+                        <String fx:value="menuBoutonsPressed" />
+                        <String fx:value="bgProduit" />
+                     </styleClass>
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="menuService" mnemonicParsing="false" onMouseClicked="#commande" prefHeight="45.0" prefWidth="165.0" style="-fx-alignment: baseline-left;" stylesheets="@../../../pepinier/src/css/mainSheet.css" text="Commande" textFill="WHITE">
+                     <padding>
+                        <Insets left="60.0" />
+                     </padding>
+                     <styleClass>
+                        <String fx:value="menuBoutons" />
+                        <String fx:value="bgService" />
+                        <String fx:value="menuBoutonsPressed" />
+                     </styleClass>
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="menuEvenement" mnemonicParsing="false" onMouseClicked="#promotion" prefHeight="45.0" prefWidth="165.0" style="-fx-alignment: baseline-left;" stylesheets="@../../../pepinier/src/css/mainSheet.css" text="Promotion" textFill="WHITE">
+                     <padding>
+                        <Insets left="60.0" />
+                     </padding>
+                     <styleClass>
+                        <String fx:value="menuBoutons" />
+                        <String fx:value="bgEvent" />
+                        <String fx:value="menuBoutonsPressed" />
+                     </styleClass>
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="menuReclamation" mnemonicParsing="false" onMouseClicked="#reclamation" prefHeight="45.0" prefWidth="165.0" style="-fx-alignment: baseline-left;" stylesheets="@../../../pepinier/src/css/mainSheet.css" text="Reclamation" textAlignment="CENTER" textFill="WHITE">
+                     <padding>
+                        <Insets left="60.0" />
+                     </padding>
+                     <styleClass>
+                        <String fx:value="menuBoutons" />
+                        <String fx:value="bgReclamation" />
+                        <String fx:value="menuBoutonsPressed" />
+                     </styleClass>
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="menuForum" mnemonicParsing="false" onMouseClicked="#livraison" prefHeight="45.0" prefWidth="165.0" style="-fx-alignment: baseline-left;" stylesheets="@../../../pepinier/src/css/mainSheet.css" text="Livraison" textAlignment="CENTER" textFill="WHITE">
+                     <padding>
+                        <Insets left="60.0" />
+                     </padding>
+                     <styleClass>
+                        <String fx:value="menuBoutons" />
+                        <String fx:value="bgForum" />
+                        <String fx:value="menuBoutonsPressed" />
+                     </styleClass>
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Button>
+               </children>
+               <padding>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </padding>
+            </VBox>
+            <Button fx:id="menuDeconnexion" layoutY="339.0" mnemonicParsing="false" onMouseClicked="#hezniassiss" prefHeight="45.0" prefWidth="165.0" style="-fx-alignment: baseline-left;" stylesheets="@../../../pepinier/src/css/mainSheet.css" text="Assisstance" textFill="WHITE" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+               <padding>
+                  <Insets left="60.0" />
+               </padding>
+               <styleClass>
+                  <String fx:value="menuBoutons" />
+                  <String fx:value="bgDeconnexion" />
+                  <String fx:value="menuBoutonsPressed" />
+               </styleClass>
+            </Button>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

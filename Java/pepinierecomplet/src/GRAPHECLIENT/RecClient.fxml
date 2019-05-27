@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GRAPHECLIENT.RecClientController">
+   <children>
+      <TabPane layoutX="-3.0" prefHeight="720.0" prefWidth="1820.0" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+          <Tab text="Reclamation">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TextField fx:id="sujetRecc" layoutX="421.0" layoutY="179.0" />
+                        <TextArea fx:id="contenuRecc" layoutX="421.0" layoutY="221.0" prefHeight="200.0" prefWidth="200.0" />
+                        <Button fx:id="AjouterRec" layoutX="712.0" layoutY="392.0" mnemonicParsing="false" onAction="#AjouterRec" prefHeight="35.0" prefWidth="78.0" text="Ajouter" />
+                        <Label layoutX="332.0" layoutY="183.0" text="Sujet" />
+                        <Label layoutX="332.0" layoutY="231.0" text="Contenu" />
+                        <ComboBox fx:id="referencee" layoutX="421.0" layoutY="116.0" prefWidth="150.0" />
+                        <Label layoutX="324.0" layoutY="120.0" text="Produits" />
+                        <ImageView fitHeight="43.0" fitWidth="54.0" layoutX="819.0" layoutY="388.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../images/plus.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="729.0" layoutY="117.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../images/tree.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fx:id="baack" fitHeight="106.0" fitWidth="118.0" layoutX="1148.0" layoutY="31.0" onMouseClicked="#back" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../image/back.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+          <Tab text="RendezVous">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="780.0" prefWidth="1280.0">
+                     <children>
+                        <DatePicker fx:id="dateRen" layoutX="408.0" layoutY="267.0" />
+                        <TextField fx:id="sujetRen" layoutX="408.0" layoutY="153.0" />
+                        <TextField fx:id="lieuRen" layoutX="408.0" layoutY="216.0" />
+                        <Label layoutX="340.0" layoutY="157.0" text="Sujet" />
+                        <Label layoutX="342.0" layoutY="220.0" text="Lieu" />
+                        <Label layoutX="342.0" layoutY="271.0" text="Date" />
+                        <Button fx:id="AjouterRen" layoutX="718.0" layoutY="349.0" mnemonicParsing="false" onAction="#AjouterRen" prefHeight="30.0" prefWidth="63.0" text="Ajouter" />
+                        <ImageView fitHeight="47.0" fitWidth="98.0" layoutX="657.0" layoutY="265.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../images/calendar.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="41.0" fitWidth="93.0" layoutX="660.0" layoutY="145.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../images/language.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="57.0" fitWidth="50.0" layoutX="607.0" layoutY="191.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../images/placeholder.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="43.0" fitWidth="67.0" layoutX="810.0" layoutY="343.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../images/plus.png" />
+                           </image>
+                        </ImageView>
+                     </children></AnchorPane>
+            </content>
+          </Tab>
+            <Tab text="Questionnaire">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TextField fx:id="recherche2" layoutX="876.0" layoutY="22.0" onKeyPressed="#rechercheQ" onKeyReleased="#rechercheQ" />
+                        <Label layoutX="601.0" layoutY="26.0" prefHeight="17.0" prefWidth="154.0" text="recherche:">
+                           <font>
+                              <Font size="14.0" />
+                           </font></Label>
+                        <Button fx:id="consulter" layoutX="59.0" layoutY="187.0" mnemonicParsing="false" onAction="#consulterQ" prefHeight="50.0" prefWidth="138.0" text="Consulter les reponses" />
+                        <TableView fx:id="tableauQues" layoutX="243.0" layoutY="101.0" onMouseClicked="#getInfo" prefHeight="222.0" prefWidth="564.0">
+                           <columns>
+                              <TableColumn fx:id="columnomq" prefWidth="88.0" text="nom" />
+                              <TableColumn fx:id="columcontenuu" prefWidth="480.0" text="contenu" />
+                              <TableColumn fx:id="idQ" prefWidth="75.0" text="IdQ" visible="false" />
+                           </columns>
+                        </TableView>
+                        <Button fx:id="ajouterQues" layoutX="61.0" layoutY="312.0" mnemonicParsing="false" onAction="#ajouterQuestion" prefHeight="52.0" prefWidth="134.0" text="Ajouter Question" />
+                        <TextField fx:id="ajQues" layoutX="243.0" layoutY="346.0" prefHeight="45.0" prefWidth="569.0" promptText="Question:" />
+                        <TextField fx:id="txt_idQ" layoutX="54.0" layoutY="89.0" visible="false" />
+                        <TableView fx:id="tabq" layoutX="237.0" layoutY="411.0" prefHeight="238.0" prefWidth="577.0">
+                           <columns>
+                              <TableColumn fx:id="contenuq" prefWidth="571.0" text="contenu" />
+                           </columns>
+                        </TableView>
+                        <Button fx:id="modifiq" layoutX="61.0" layoutY="249.0" mnemonicParsing="false" onAction="#modifq" prefHeight="49.0" prefWidth="134.0" text="modifier question" />
+                        <ImageView fitHeight="44.0" fitWidth="58.0" layoutX="804.0" layoutY="12.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../images/search.png" />
+                           </image>
+                        </ImageView>
+                        <TextField fx:id="ajtreponse" layoutX="237.0" layoutY="652.0" prefHeight="31.0" prefWidth="576.0" promptText="reponse:" />
+                        <Button fx:id="ajtrepo" layoutX="59.0" layoutY="629.0" mnemonicParsing="false" onAction="#ajtreponse" prefHeight="47.0" prefWidth="141.0" text="ajouter Reponse" />
+                        <Button fx:id="supprimerreponse" layoutX="60.0" layoutY="553.0" mnemonicParsing="false" onAction="#supprimerreponse" prefHeight="49.0" prefWidth="138.0" text="supprimer reponse" />
+                     </children></AnchorPane>
+               </content>
+            </Tab>
+            <Tab text="Voter">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <RadioButton fx:id="ajt0" layoutX="93.0" layoutY="145.0" mnemonicParsing="false" text="0*">
+                           <toggleGroup>
+                              <ToggleGroup fx:id="voteNote" />
+                           </toggleGroup></RadioButton>
+                        <RadioButton fx:id="ajt1" layoutX="200.0" layoutY="145.0" mnemonicParsing="false" text="1*" toggleGroup="$voteNote" />
+                        <RadioButton fx:id="ajt2" layoutX="333.0" layoutY="145.0" mnemonicParsing="false" text="2*" toggleGroup="$voteNote" />
+                        <RadioButton fx:id="ajt3" layoutX="459.0" layoutY="145.0" mnemonicParsing="false" text="3*" toggleGroup="$voteNote" />
+                        <Button fx:id="valider" layoutX="259.0" layoutY="253.0" mnemonicParsing="false" onAction="#valider" prefHeight="32.0" prefWidth="70.0" text="valider" />
+                        <Label layoutX="110.0" layoutY="50.0" prefHeight="35.0" prefWidth="401.0" text="Que ponsez vous de notre service">
+                           <font>
+                              <Font size="24.0" />
+                           </font>
+                        </Label>
+                        <ImageView fitHeight="44.0" fitWidth="51.0" layoutX="251.0" layoutY="85.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../images/star.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="47.0" fitWidth="91.0" layoutX="343.0" layoutY="242.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../images/success.png" />
+                           </image>
+                        </ImageView>
+                     </children></AnchorPane>
+               </content>
+            </Tab>
+        </tabs>
+      </TabPane>
+   </children>
+</AnchorPane>

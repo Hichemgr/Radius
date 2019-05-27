@@ -1,0 +1,350 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Accordion?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GRAPHE.PromotionUserController">
+   <children>
+      <Accordion layoutX="170.0" layoutY="150.0" />
+      <TabPane layoutX="6.0" layoutY="4.0" prefHeight="720.0" prefWidth="1275.0" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+          <Tab text="Promotion">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="324.0" prefWidth="532.0">
+                     <children>
+                        <TabPane layoutX="1.0" prefHeight="691.0" prefWidth="1280.0" tabClosingPolicy="UNAVAILABLE">
+                          <tabs>
+                            <Tab text="Afficher">
+                              <content>
+                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="649.0" prefWidth="1001.0">
+                                       <children>
+                                          <TableView fx:id="tableauPromo" layoutX="104.0" layoutY="193.0" prefHeight="303.0" prefWidth="979.0">
+                                             <columns>
+                                                <TableColumn fx:id="columnompromo" prefWidth="123.00003051757812" text="nom " />
+                                                <TableColumn fx:id="columdatedebut" prefWidth="160.0" text="date debut" />
+                                                <TableColumn fx:id="columdatefin" prefWidth="162.0" text="date fin " />
+                                                <TableColumn fx:id="columnpourcentage" prefWidth="172.0" text="Pourcentage" />
+                                                <TableColumn fx:id="columnnomproduit1" prefWidth="171.0" text="nom Produit" />
+                                                <TableColumn fx:id="nouveauprixcol" prefWidth="189.0" text="Nouveau prix" />
+                                             </columns>
+                                          </TableView>
+                                          <Button fx:id="supPromo" layoutX="807.0" layoutY="524.0" mnemonicParsing="false" onAction="#supPromo" prefHeight="45.0" prefWidth="124.0" text="supprimer" />
+                                          <TextField fx:id="suppPromo" layoutX="629.0" layoutY="529.0" prefHeight="36.0" prefWidth="149.0" promptText="nompromotion" />
+                                          <Button fx:id="ActualiserPromo" layoutX="885.0" layoutY="96.0" mnemonicParsing="false" onAction="#ActualiserPromo" prefHeight="34.0" prefWidth="92.0" text="Actualiser" />
+                                          <TextField fx:id="rechfield" layoutX="95.0" layoutY="101.0" onKeyPressed="#reche" onKeyReleased="#reche" onKeyTyped="#reche" promptText="rechercher" />
+                                          <ImageView fitHeight="108.0" fitWidth="114.0" layoutX="456.0" layoutY="72.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../image/tag.png" />
+                                             </image>
+                                          </ImageView>
+                                          <Label layoutX="365.0" layoutY="14.0" prefHeight="46.0" prefWidth="312.0" style="-fx-background-color: #568203;" text="Liste des Promotions" textFill="#1b1a17" textOverrun="CLIP">
+                                             <font>
+                                                <Font name="System Bold Italic" size="31.0" />
+                                             </font>
+                                          </Label>
+                                          <ImageView fitHeight="38.0" fitWidth="37.0" layoutX="270.0" layoutY="94.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../image/icone-recherche-png-1.png" />
+                                             </image>
+                                          </ImageView>
+                                          <ImageView fitHeight="48.0" fitWidth="48.0" layoutX="815.0" layoutY="89.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../image/562.png" />
+                                             </image>
+                                          </ImageView>
+                                          <ImageView fitHeight="72.0" fitWidth="72.0" layoutX="947.0" layoutY="511.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../image/garbage-2091534_960_720.png" />
+                                             </image>
+                                          </ImageView>
+                                          <ImageView fx:id="baack" fitHeight="121.0" fitWidth="141.0" layoutX="1125.0" layoutY="12.0" onMouseClicked="#back" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../image/back.png" />
+                                             </image>
+                                          </ImageView>
+                                       </children>
+                                    </AnchorPane>
+                              </content>
+                            </Tab>
+                            <Tab text="Ajouter">
+                              <content>
+                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                       <children>
+                                          <Label layoutX="364.0" layoutY="22.0" prefHeight="60.0" prefWidth="274.0" style="-fx-background-color: #568203;" text="Ajouter une Promotion:">
+                                             <font>
+                                                <Font name="System Bold Italic" size="25.0" />
+                                             </font>
+                                          </Label>
+                                          <Text layoutX="312.0" layoutY="136.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nom : " />
+                                          <Text layoutX="295.0" layoutY="201.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Date debut : " />
+                                          <Text layoutX="306.0" layoutY="272.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Date fin :" />
+                                          <Text layoutX="309.0" layoutY="348.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Pourcentage : " />
+                                          <TextField fx:id="txtnom" layoutX="414.0" layoutY="119.0" prefHeight="25.0" prefWidth="174.0" />
+                                          <TextField fx:id="txtpourcentage" layoutX="414.0" layoutY="331.0" prefHeight="25.0" prefWidth="175.0" />
+                                          <DatePicker fx:id="datedebutField" layoutX="414.0" layoutY="184.0" />
+                                          <DatePicker fx:id="datefinField" layoutX="414.0" layoutY="255.0" />
+                                          <Button fx:id="ajouterPromotion" layoutX="426.0" layoutY="498.0" mnemonicParsing="false" onAction="#ajouterPromotion" prefHeight="36.0" prefWidth="79.0" text="Ajouter" />
+                                          <ImageView fitHeight="58.0" fitWidth="57.0" layoutX="560.0" layoutY="488.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../image/plus.png" />
+                                             </image>
+                                          </ImageView>
+                                          <ComboBox fx:id="combobox" layoutX="426.0" layoutY="397.0" onAction="#combobox" prefWidth="150.0" />
+                                          <Text layoutX="308.0" layoutY="414.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nom produit : " />
+                                          
+                                       </children>
+                                    </AnchorPane>
+                              </content>
+                            </Tab>
+                              <Tab text="Modifier">
+                                 <content>
+                                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                       <children>
+                                          <Label layoutX="143.0" layoutY="162.0" prefHeight="27.0" prefWidth="47.0" text="Nom : ">
+                                             <font>
+                                                <Font size="13.0" />
+                                             </font>
+                                          </Label>
+                                          <Label layoutX="143.0" layoutY="231.0" prefHeight="27.0" prefWidth="86.0" text="Date debut : ">
+                                             <font>
+                                                <Font size="13.0" />
+                                             </font>
+                                          </Label>
+                                          <Text layoutX="141.0" layoutY="316.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Date fin : " />
+                                          <Text layoutX="128.0" layoutY="380.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Pourcentage : " />
+                                          <TextField fx:id="modifpourcentage" layoutX="256.0" layoutY="363.0" prefHeight="25.0" prefWidth="185.0" />
+                                          <TextField fx:id="modifnom" layoutX="257.0" layoutY="168.0" prefHeight="25.0" prefWidth="185.0" />
+                                          <DatePicker fx:id="modifdatedebut" layoutX="254.0" layoutY="232.0" prefHeight="25.0" prefWidth="185.0" />
+                                          <DatePicker fx:id="modifdatefin" layoutX="256.0" layoutY="299.0" prefHeight="25.0" prefWidth="185.0" />
+                                          <Button fx:id="modifPromo" layoutX="229.0" layoutY="517.0" mnemonicParsing="false" onAction="#modifPromo" prefHeight="45.0" prefWidth="124.0" text="Modifier" />
+                                          <Label layoutX="339.0" layoutY="28.0" prefHeight="60.0" prefWidth="319.0" style="-fx-background-color: #568203;" text="Modifier une promotion : ">
+                                             <font>
+                                                <Font name="System Bold Italic" size="25.0" />
+                                             </font>
+                                          </Label>
+                                          <ComboBox fx:id="comboModifProm" layoutX="257.0" layoutY="414.0" onAction="#comboModifProm" prefHeight="25.0" prefWidth="185.0" />
+                                          <Text layoutX="139.0" layoutY="431.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nom Produit : " />
+                                          <ImageView fitHeight="104.0" fitWidth="104.0" layoutX="387.0" layoutY="488.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../image/edit-png-icon-blue-pencil-18.png" />
+                                             </image>
+                                          </ImageView>
+                                          <TableView fx:id="tabmodifProm" layoutX="773.0" layoutY="139.0" onMouseClicked="#remplirChamps" prefHeight="322.0" prefWidth="453.0">
+                                            <columns>
+                                              <TableColumn fx:id="nommodif" prefWidth="75.0" text="Nom " />
+                                              <TableColumn fx:id="datedebutmodif" prefWidth="75.0" text="Date debut" />
+                                                <TableColumn fx:id="datefinmodif" prefWidth="75.0" text="Date fin" />
+                                                <TableColumn fx:id="pourcentagemodif" prefWidth="111.0" text="pourcentage" />
+                                                <TableColumn fx:id="nomproduitmodif" prefWidth="116.0" text="Nom produit" />
+                                            </columns>
+                                          </TableView>
+                                       </children></AnchorPane>
+                                 </content>
+                              </Tab>
+                              <Tab text="Mail et SMS">
+                                 <content>
+                                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                       <children>
+                                          <Label layoutX="137.0" layoutY="14.0" prefHeight="27.0" prefWidth="254.0">
+                                             <font>
+                                                <Font size="18.0" />
+                                             </font>
+                                          </Label>
+                                          <TableView fx:id="tabuser" layoutX="587.0" layoutY="43.0" onMouseClicked="#RemplirUser" prefHeight="453.0" prefWidth="352.0">
+                                            <columns>
+                                              <TableColumn fx:id="columnmail" prefWidth="169.0" text="adresse mail " />
+                                              <TableColumn fx:id="columntel" prefWidth="182.0" text="telephone" />
+                                            </columns>
+                                          </TableView>
+                                          <Text layoutX="33.0" layoutY="167.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Adresse mail : " />
+                                          <Text layoutX="42.0" layoutY="274.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Telephone  : " />
+                                          <TextField fx:id="txtmail" layoutX="237.0" layoutY="150.0" prefHeight="25.0" prefWidth="183.0" />
+                                          <TextField fx:id="txttelephone" layoutX="235.0" layoutY="257.0" prefHeight="25.0" prefWidth="187.0" />
+                                          <Button fx:id="envoyer" layoutX="220.0" layoutY="370.0" mnemonicParsing="false" onAction="#envoyer" prefHeight="45.0" prefWidth="124.0" text="Envoyer" />
+                                          <Label layoutX="111.0" layoutY="13.0" prefHeight="60.0" prefWidth="274.0" style="-fx-background-color: #568203;" text="Envoyer mail et SMS">
+                                             <font>
+                                                <Font name="System Bold Italic" size="25.0" />
+                                             </font>
+                                          </Label>
+                                          <ImageView fitHeight="97.0" fitWidth="97.0" layoutX="385.0" layoutY="344.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../image/mail_123245.png" />
+                                             </image>
+                                          </ImageView>
+                                       </children>
+                                    </AnchorPane>
+                                 </content>
+                              </Tab>
+                          </tabs>
+                        </TabPane>
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+            <Tab text="Publicite">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="324.0" prefWidth="532.0">
+                     <children>
+                        <TabPane layoutX="1.0" layoutY="-3.0" prefHeight="695.0" prefWidth="1280.0" tabClosingPolicy="UNAVAILABLE">
+                           <tabs>
+                              <Tab text="Afficher">
+                                 <content>
+                                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="594.0" prefWidth="1280.0">
+                                       <children>
+                                          <TableView fx:id="tableauPub" layoutX="105.0" layoutY="228.0" prefHeight="300.0" prefWidth="790.0">
+                                             <columns>
+                                                <TableColumn fx:id="columnompub" prefWidth="273.0" text="nom " />
+                                                <TableColumn fx:id="columdatepub" prefWidth="250.0" text="Date" />
+                                                <TableColumn fx:id="nomproduit" prefWidth="266.0" text="Nom Produit" />
+                                             </columns>
+                                          </TableView>
+                                          <TextField fx:id="suppPub" layoutX="620.0" layoutY="549.0" promptText="nom pub" />
+                                          <Button fx:id="supprPub" layoutX="807.0" layoutY="549.0" mnemonicParsing="false" onAction="#supprPub" text="Supprimer" />
+                                          <Button fx:id="ActualiserPub" layoutX="732.0" layoutY="181.0" mnemonicParsing="false" onAction="#ActualiserPub" prefHeight="25.0" prefWidth="111.0" text="Actualiser" />
+                                          <TextField fx:id="pubrech" layoutX="75.0" layoutY="180.0" onKeyPressed="#recherche" onKeyReleased="#recherche" onKeyTyped="#recherche" promptText="rechercher" />
+                                          <ImageView fitHeight="105.0" fitWidth="138.0" layoutX="406.0" layoutY="87.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../image/publicité-png-7.png" />
+                                             </image>
+                                          </ImageView>
+                                          <Label layoutX="319.0" layoutY="20.0" prefHeight="46.0" prefWidth="312.0" style="-fx-background-color: #568203;" text="Liste des Publicités " textFill="#1b1a17" textOverrun="CLIP">
+                                             <font>
+                                                <Font name="System Bold Italic" size="31.0" />
+                                             </font>
+                                          </Label>
+                                          <ImageView fitHeight="45.0" fitWidth="45.0" layoutX="242.0" layoutY="170.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../image/icone-recherche-png-1.png" />
+                                             </image>
+                                          </ImageView>
+                                          <ImageView fitHeight="49.0" fitWidth="45.0" layoutX="863.0" layoutY="169.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../image/562.png" />
+                                             </image>
+                                          </ImageView>
+                                          <ImageView fitHeight="74.0" fitWidth="86.0" layoutX="908.0" layoutY="525.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../image/garbage-2091534_960_720.png" />
+                                             </image>
+                                          </ImageView>
+                                       </children>
+                                    </AnchorPane>
+                                 </content>
+                              </Tab>
+                              <Tab text="Ajouter">
+                                 <content>
+                                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="673.0" prefWidth="1280.0">
+                                       <children>
+                                          <Text layoutX="306.0" layoutY="160.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nom : " />
+                                          <Text layoutX="305.0" layoutY="251.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Date " />
+                                          <TextField fx:id="txtnompub" layoutX="477.0" layoutY="138.0" prefHeight="36.0" prefWidth="192.0" />
+                                          <DatePicker fx:id="datefPubField1" layoutX="479.0" layoutY="228.0" prefHeight="37.0" prefWidth="193.0" />
+                                          <Button fx:id="ajouterPub" layoutX="431.0" layoutY="420.0" mnemonicParsing="false" onAction="#ajouterPub" prefHeight="48.0" prefWidth="106.0" text="Ajouter" />
+                                          <ComboBox fx:id="comboPub" layoutX="478.0" layoutY="309.0" onAction="#comboPub" prefHeight="37.0" prefWidth="191.0" />
+                                          <Text layoutX="285.0" layoutY="332.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nom produit : " />
+                                          <Label layoutX="305.0" layoutY="30.0" prefHeight="46.0" prefWidth="312.0" style="-fx-background-color: #568203;" text="Ajouter Publicité : " textFill="#1b1a17" textOverrun="CLIP">
+                                             <font>
+                                                <Font name="System Bold Italic" size="31.0" />
+                                             </font>
+                                          </Label>
+                                          <ImageView fitHeight="85.0" fitWidth="85.0" layoutX="575.0" layoutY="401.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../image/plus.png" />
+                                             </image>
+                                          </ImageView>
+                                       </children>
+                                    </AnchorPane>
+                                 </content>
+                              </Tab>
+                              <Tab text="Modifier">
+                                 <content>
+                                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                       <children>
+                                          <Label layoutX="76.0" layoutY="125.0" prefHeight="27.0" prefWidth="97.0" text="Nom : ">
+                                             <font>
+                                                <Font size="13.0" />
+                                             </font>
+                                          </Label>
+                                          <Text layoutX="76.0" layoutY="221.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Date : " />
+                                          <TextField fx:id="modifnom1" layoutX="205.0" layoutY="126.0" />
+                                          <DatePicker fx:id="modifdatefin1" layoutX="204.0" layoutY="204.0" prefHeight="25.0" prefWidth="152.0" />
+                                          <Button fx:id="modifPub" layoutX="173.0" layoutY="415.0" mnemonicParsing="false" onAction="#modifPub" prefHeight="54.0" prefWidth="125.0" text="Modifier" />
+                                          <ComboBox fx:id="comboModifPub" layoutX="205.0" layoutY="292.0" onAction="#comboModifPub" prefWidth="150.0" />
+                                          <Text layoutX="82.0" layoutY="309.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nom produit : " />
+                                          <Label layoutX="288.0" layoutY="33.0" prefHeight="46.0" prefWidth="312.0" style="-fx-background-color: #568203;" text="Modifier  Publicité : " textFill="#1b1a17" textOverrun="CLIP">
+                                             <font>
+                                                <Font name="System Bold Italic" size="31.0" />
+                                             </font>
+                                          </Label>
+                                          <ImageView fitHeight="126.0" fitWidth="126.0" layoutX="354.0" layoutY="369.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../image/edit-png-icon-blue-pencil-18.png" />
+                                             </image>
+                                          </ImageView>
+                                          <TableView fx:id="tabModifPub" layoutX="594.0" layoutY="153.0" onMouseClicked="#remplirchampPub" prefHeight="320.0" prefWidth="533.0">
+                                            <columns>
+                                              <TableColumn fx:id="modifNomPub" prefWidth="187.0" text="Nom pub" />
+                                              <TableColumn fx:id="modifDatePub" prefWidth="141.0" text="Date pub" />
+                                                <TableColumn fx:id="modifNomPrPub" prefWidth="204.0" text="Nom Produit" />
+                                            </columns>
+                                          </TableView>
+                                       </children>
+                                    </AnchorPane>
+                                 </content>
+                              </Tab>
+                              <Tab text="Mail et SMS">
+                                 <content>
+                                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                       <children>
+                                          <Label layoutX="60.0" layoutY="140.0" prefHeight="27.0" prefWidth="97.0" text="Adresse mail : ">
+                                             <font>
+                                                <Font size="13.0" />
+                                             </font>
+                                          </Label>
+                                          <Text layoutX="60.0" layoutY="236.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Telephone : " />
+                                          <TextField fx:id="mailPub" layoutX="201.0" layoutY="141.0" promptText="foulen@gmail.com" />
+                                          <Label layoutX="60.0" layoutY="32.0" prefHeight="46.0" prefWidth="312.0" style="-fx-background-color: #568203;" text="Envoyer Mail et SMS" textFill="#1b1a17" textOverrun="CLIP">
+                                             <font>
+                                                <Font name="System Bold Italic" size="31.0" />
+                                             </font>
+                                          </Label>
+                                          <TextField fx:id="telpub" layoutX="201.0" layoutY="219.0" promptText="+216" />
+                                          <Button fx:id="envoyerPub" layoutX="216.0" layoutY="323.0" mnemonicParsing="false" onAction="#envoyerPub" prefHeight="45.0" prefWidth="95.0" text="Envoyer" />
+                                          <ImageView fitHeight="103.0" fitWidth="103.0" layoutX="350.0" layoutY="294.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../image/mail_123245.png" />
+                                             </image>
+                                          </ImageView>
+                                          <TableView fx:id="tabUserPub" layoutX="655.0" layoutY="94.0" prefHeight="291.0" prefWidth="291.0">
+                                            <columns>
+                                              <TableColumn fx:id="PubUseradr" prefWidth="141.0" text="Adresse mail " />
+                                              <TableColumn fx:id="TelUser" prefWidth="149.0" text="Telephone" />
+                                            </columns>
+                                          </TableView>
+                                       </children>
+                                    </AnchorPane>
+                                 </content>
+                              </Tab>
+                           </tabs>
+                        </TabPane>
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+        </tabs>
+      </TabPane>
+   </children>
+</AnchorPane>

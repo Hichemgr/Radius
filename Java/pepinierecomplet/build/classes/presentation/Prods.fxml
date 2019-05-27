@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="768.0" prefWidth="1366.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="presentation.ProdsController">
+    <stylesheets>
+        <URL value="@prods.css" />
+    </stylesheets>
+   <children>
+      <Label layoutX="478.0" layoutY="77.0" prefHeight="48.0" prefWidth="461.0" text="Products">
+         <font>
+            <Font name="Century Gothic Italic" size="42.0" />
+         </font>
+      </Label>
+      <ImageView fx:id="wishlist" fitHeight="71.0" fitWidth="64.0" layoutX="1248.0" layoutY="67.0" onMouseClicked="#gotoWishList" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../image/Wishlist.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="back" fitHeight="54.0" fitWidth="64.0" layoutX="1263.0" layoutY="672.0" onDragDetected="#Goback" onMouseClicked="#Goback" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../image/back.png" />
+         </image>
+      </ImageView>
+      <ScrollPane fx:id="pane" layoutX="45.0" layoutY="174.0" prefHeight="580.0" prefWidth="1075.0" />
+      <ImageView fitHeight="78.0" fitWidth="239.0" layoutX="11.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../../../Desktop/projet%20hichem/pepiniere/src/image/radius.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="baack" fitHeight="78.0" fitWidth="96.0" layoutX="1096.0" layoutY="21.0" onMouseClicked="#back" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../image/back.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>

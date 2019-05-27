@@ -1,0 +1,77 @@
+slim_homepage:
+    path:     /index
+    defaults: { _controller: SlimBundle:Default:index }
+slim_homepagefront:
+    path:     /indexfront
+    defaults: { _controller: SlimBundle:Default:indexfront }
+slim_homepagefrontassisstance:
+    path:     /single-post
+    defaults: { _controller: SlimBundle:Default:singlepost }
+
+seif_homepagefrontlivraison:
+    path:     /livraison
+    defaults: { _controller: SlimBundle:Default:livraison }
+ajoutAssisstance:
+    path:     /ajoutAssisstance
+    defaults: { _controller: SlimBundle:Default:ajoutAssisstance }
+ajouterAssisstant:
+    path:     /ajouterAssisstant
+    defaults: { _controller: SlimBundle:Default:ajouterAssisstant }
+afficherAssisstant:
+        path:     /afficherAssisstant
+        defaults: { _controller: SlimBundle:Default:afficherAssisstant }
+
+supprimerAssisstant:
+    path:     /supprimerAssisstant{IdAssisstant}
+    defaults: { _controller: SlimBundle:Default:supprimerAssisstant }
+supprimerAssisstance:
+    path:     /supprimerAssisstance{idAssisstance}
+    defaults: { _controller: SlimBundle:Default:supprimerAssisstance }
+supprimerConseil:
+    path:     /supprimerConseil{idConseil}
+    defaults: { _controller: SlimBundle:Default:supprimerConseil }
+modifierAssisstant:
+        path:     /modifierAssisstant{IdAssisstant}
+        defaults: { _controller: SlimBundle:Default:modifierAssisstant }
+modifierAssisstance:
+    path:     /modifierAssisstance{idAssisstance}
+    defaults: { _controller: SlimBundle:Default:modifierAssisstance }
+afficherLivraison:
+    path:     /afficherLivraison
+    defaults: { _controller: SlimBundle:Default:afficherLivraison }
+supprimerLivraison:
+    path:     /supprimerLivraison{idLivraison}
+    defaults: { _controller: SlimBundle:Default:supprimerLivraison }
+modifierLivraison:
+    path:     /modifierLivraison{idLivraison}
+    defaults: { _controller: SlimBundle:Default:modifierLivraison }
+afficherLivreur:
+    path:     /afficherLivreur
+    defaults: { _controller: SlimBundle:Default:afficherLivreur }
+supprimerLivreur:
+    path:     /supprimerLivreur{idLivreur}
+    defaults: { _controller: SlimBundle:Default:supprimerLivreur }
+modifierLivreur:
+    path:     /modifierLivreur{idLivreur}
+    defaults: { _controller: SlimBundle:Default:modifierLivreur }
+ajouterLivreur:
+    path:     /ajouterLivreur
+    defaults: { _controller: SlimBundle:Default:ajouterLivreur }
+ajouterLivraison:
+    path:     /ajouterLivraison
+    defaults: { _controller: SlimBundle:Default:ajouterLivraison }
+afficherLivreurDispo:
+    path:     /afficherLivreurDispo/{idLivraison}
+    defaults: { _controller: SlimBundle:Default:afficherLivreurDispo }
+AffecterLivreurLivraison:
+    path:     /afficherLivreurDispo/{idLivraison}/{nomLivreur}
+    defaults: { _controller: SlimBundle:Default:AffecterLivreurLivraison }
+TerminerLivraison:
+    path:     /TerminerLivraison/{idLivraison}/{nomLivreur}
+    defaults: { _controller: SlimBundle:Default:TerminerLivraison }
+calendar:
+    path:     /calendar
+    defaults: { _controller: SlimBundle:Default:calendar }
+mesLivraisons:
+    path:     /mesLivraisons
+    defaults: { _controller: SlimBundle:Default:mesLivraisons }
